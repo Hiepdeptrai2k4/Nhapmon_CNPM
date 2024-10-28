@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
 <!-- Sidebar  -->
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
@@ -113,7 +114,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/1.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/1.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
@@ -125,7 +126,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/02.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
@@ -137,7 +138,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/03.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
@@ -149,7 +150,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/04.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Đơn hàng #7979 giao không thành công</h6>
@@ -176,7 +177,7 @@
                                     <a href="#" class="iq-sub-card">
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/01.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">QT Shop</h6>
@@ -187,7 +188,7 @@
                                     <a href="#" class="iq-sub-card">
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/02.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Tran Thuan Store</h6>
@@ -198,7 +199,7 @@
                                     <a href="#" class="iq-sub-card">
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/03.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Hoang Vu Book</h6>

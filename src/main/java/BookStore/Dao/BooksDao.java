@@ -19,7 +19,15 @@ public class BooksDao extends BaseDao {
 		list = _jdbcTemplate.query(sql, new MapperBooks());
 		return list;
 	} 
-	
+	public Books GetDataBookById(int id) {
+		List<Books> list = new ArrayList<Books>();
+		StringBuffer  sql = new StringBuffer();
+		sql.append("SELECT * FROM books ");
+		sql.append("WHERE BookID ="+id);
+		
+		list = _jdbcTemplate.query(sql.toString(), new MapperBooks());
+		return list.get(0);
+	}
 	
 	
 }

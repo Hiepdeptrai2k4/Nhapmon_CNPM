@@ -12,15 +12,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>NHASACHTV - Nhà sách trực tuyến</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="<c:url value = "assets/user/images/favicon.ico"/>" >
+      <link rel="shortcut icon" href="<c:url value = "/assets/user/images/favicon.ico"/>" >
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="<c:url value = "assets/user/css/bootstrap.min.css"/>">
+      <link rel="stylesheet" href="<c:url value = "/assets/user/css/bootstrap.min.css"/>">
       <!-- Typography CSS -->
-      <link rel="stylesheet" href="<c:url value = "assets/user/css/typography.css"/>">
+      <link rel="stylesheet" href="<c:url value = "/assets/user/css/typography.css"/>">
       <!-- Style CSS -->
-      <link rel="stylesheet" href="<c:url value = "assets/user/css/style.css"/>">
+      <link rel="stylesheet" href="<c:url value = "/assets/user/css/style.css"/>">
       <!-- Responsive CSS -->
-      <link rel="stylesheet" href="<c:url value = "assets/user/css/responsive.css"/>" >
+      <link rel="stylesheet" href="<c:url value = "/assets/user/css/responsive.css"/>" >
    </head>
    <body>
       <!-- Wrapper Start -->

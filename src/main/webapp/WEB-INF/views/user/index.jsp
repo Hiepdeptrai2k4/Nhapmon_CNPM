@@ -49,7 +49,7 @@
                                           <div class="col-6 p-0 position-relative image-overlap-shadow">
                                              <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/browse-books/img01.jpg"/>" alt=""></a>
                                              <div class="view-book">
-                                                <a href="book-page.html" class="btn btn-sm btn-white">Mua Ngay</a>
+                                                <a href="details/1" class="btn btn-sm btn-white">Mua Ngay</a>
                                              </div>
                                           </div>
                                           <div class="col-6">
