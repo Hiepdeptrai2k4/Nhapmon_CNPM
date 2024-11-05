@@ -14,11 +14,13 @@ public class ProductController extends BaseController {
 	@Autowired
 	ProductServiceImpl productServiceImpl;
 	
-	@RequestMapping(value = {"/user/details/{id}"})
+	@RequestMapping(value = {"/details/{id}"})
 	public ModelAndView Index(@PathVariable int id) {
 		//ModelAndView mv= new ModelAndView("user/index");
 		
 		_mvShare.addObject("book",productServiceImpl.GetDataBookById(id));
+		_mvShare.addObject("fivebooks",productServiceImpl.GetDataSomeBook(5));
+		_mvShare.addObject("favorbooks",productServiceImpl.GetDataFavorBook(6));
 		//_mvShare.addObject("categorys",_homeService.GetDataCategorys());
 		//_mvShare.addObject("products",_homeService.GetDataProducts());
 		_mvShare.setViewName("user/product");

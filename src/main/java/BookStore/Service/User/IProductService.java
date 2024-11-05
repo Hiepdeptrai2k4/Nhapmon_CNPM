@@ -11,4 +11,6 @@ import BookStore.Entity.Books;
 public interface IProductService {
 	@Autowired
 	public Books GetDataBookById(int id);
+	public List<Books> GetDataSomeBook(int num);
+	public List<Books> GetDataFavorBook(int num);
 }

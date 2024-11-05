@@ -22,32 +22,32 @@
 								
 												<li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/01.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/02.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/03.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/04.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/05.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/06.jpg"/>" class="img-fluid rounded w-100" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid rounded w-100" alt="">
                                                    </a>
                                                 </li>
                                              </ul>
@@ -56,32 +56,32 @@
                                              <ul id="description-slider" class="list-inline p-0 m-0  d-flex align-items-center">
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/new_realeases/img01.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/02.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/03.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/04.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/05.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                                 <li>
                                                    <a href="javascript:void(0);">
-                                                   <img src="<c:url value = "/assets/user/images/book-dec/06.jpg"/>" class="img-fluid w-100 rounded" alt="">
+                                                   <img src="<c:url value = "/assets/user/${ book.bookImg }"/>" class="img-fluid w-100 rounded" alt="">
                                                    </a>
                                                 </li>
                                              </ul>
@@ -152,91 +152,36 @@
                         </div>
                         <div class="iq-card-body single-similar-contens">
                            <ul id="single-similar-slider" class="list-inline p-0 mb-0 row">
-                              <li class="col-md-3">
-                                 <div class="row align-items-center">
-                                    <div class="col-5">
-                                       <div class="position-relative image-overlap-shadow">
-                                          <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/similar-books/01.jpg"/>" alt=""></a>
-                                          <div class="view-book">
-                                             <a href="book-page.html" class="btn btn-sm btn-white">Xem thêm</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-7 pl-0">
-                                       <h6 class="mb-2">Nhà Đầu Tư Thông Minh...</h6>
-                                       <p class="text-body">Dịch giả : Lê Quốc Phương</p>
-                                       <a href="#" class="text-dark" tabindex="-1">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="row align-items-center">
-                                    <div class="col-5">
-                                       <div class="position-relative image-overlap-shadow">
-                                          <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/similar-books/02.jpg"/>" alt=""></a>
-                                          <div class="view-book">
-                                             <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-7 pl-0">
-                                       <h6 class="mb-2">Nhà Lãnh Đạo Không Chức Danh</h6>
-                                       <p class="text-body">Tác giả : NXB Trẻ</p>
-                                       <a href="#" class="text-dark" tabindex="-1">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="row align-items-center">
-                                    <div class="col-5">
-                                       <div class="position-relative image-overlap-shadow">
-                                          <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/similar-books/03.jpg"/>" alt=""></a>
-                                          <div class="view-book">
-                                             <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-7 pl-0">
-                                       <h6 class="mb-2">Nghệ Thuật đầu tư Dhandho...</h6>
-                                       <p class="text-body">Tác giả : Bill Emia</p>
-                                       <a href="#" class="text-dark" tabindex="-1">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="row align-items-center">
-                                    <div class="col-5">
-                                       <div class="position-relative image-overlap-shadow">
-                                          <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/similar-books/04.jpg"/>" alt=""></a>
-                                          <div class="view-book">
-                                             <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-7 pl-0">
-                                       <h6 class="mb-2">Từ Tốt Đến Vĩ Đại.</h6>
-                                       <p class="text-body">Tác giả : Hal Appeno</p>
-                                       <a href="#" class="text-dark" tabindex="-1">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="row align-items-center">
-                                    <div class="col-5">
-                                       <div class="position-relative image-overlap-shadow">
-                                          <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/similar-books/05.jpg"/>" alt=""></a>
-                                          <div class="view-book">
-                                             <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="col-7 pl-0">
-                                       <h6 class="mb-2">D. Trump - Đừng Bao Giờ Bỏ Cuộc..</h6>
-                                       <p class="text-body">Tác giả : Zack Lee</p>
-                                       <a href="#" class="text-dark" tabindex="-1">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
+								<c:forEach var="item" items="${ fivebooks }" varStatus="loop">
+									<li class="col-md-3">
+										<div class="row align-items-center">
+											<div class="col-5">
+												<div class="position-relative image-overlap-shadow">
+													<a href="javascript:void();"><img
+														class="img-fluid rounded w-100"
+														
+														src="<c:url value = "/assets/user/${ item.bookImg }"/>"
+														alt=""></a>
+													<div class="view-book">
+														<a href="${ item.bookID }" class="btn btn-sm btn-white">Xem
+															thêm</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-7 pl-0">
+												<h6 class="mb-2">${ item.title }</h6>
+												<p class="text-body">${ item.year }</p>
+												<a href="#" class="text-dark" tabindex="-1">Đọc ngay<i
+													class="ri-arrow-right-s-line"></i></a>
+											</div>
+										</div>
+									</li>
+								</c:forEach>
+
+								
+                              
+                              
+                              
                            </ul>
                         </div>
                      </div>
@@ -253,18 +198,19 @@
                         </div>
                         <div class="iq-card-body trendy-contens">
                            <ul id="trendy-slider" class="list-inline p-0 mb-0 row">
+                           <c:forEach var="item" items="${ favorbooks }" varStatus="loop">
                               <li class="col-md-3">
                                  <div class="d-flex align-items-center">
                                     <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/01.jpg"/>" alt=""></a>
+                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/${ item.bookImg }"/>" alt=""></a>
                                        <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
+                                          <a href="${ item.bookID }" class="btn btn-sm btn-white">Xem sách</a>
                                        </div>
                                     </div>
                                     <div class="col-7">
                                        <div class="mb-2">
-                                          <h6 class="mb-1">Sinh Ra Để Trở Thành ..</h6>
-                                          <p class="font-size-13 line-height mb-1">Paul Molive</p>
+                                          <h6 class="mb-1">${ item.title }</h6>
+                                          <p class="font-size-13 line-height mb-1">${ item.year }</p>
                                           <div class="d-block">
                                              <span class="font-size-13 text-warning">
                                              <i class="fa fa-star"></i>
@@ -276,7 +222,7 @@
                                           </div>
                                        </div>
                                        <div class="price d-flex align-items-center">
-                                          <h6><b>107.900 ₫</b></h6>
+                                          <h6><b>${ item.price } ₫</b></h6>
                                        </div>
                                        <div class="iq-product-action">
                                           <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
@@ -285,166 +231,7 @@
                                     </div>
                                  </div>
                               </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/02.jpg"/>" alt=""></a>
-                                       <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                       </div>
-                                    </div>
-                                    <div class="col-7">
-                                       <div class="mb-2">
-                                          <h6 class="mb-1">Năng Lực Tìm Kiếm</h6>
-                                          <p class="font-size-13 line-height mb-1">Anna Sthesia</p>
-                                          <div class="d-block">
-                                             <span class="font-size-13 text-warning">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             </span>
-                                          </div>
-                                       </div>
-                                       <div class="price d-flex align-items-center">
-                                          <h6><b>45.500 ₫</b></h6>
-                                       </div>
-                                       <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/03.jpg"/>" alt=""></a>
-                                       <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                       </div>
-                                    </div>
-                                    <div class="col-7">
-                                       <div class="mb-2">
-                                          <h6 class="mb-1">Phân Tích Thị Trường...</h6>
-                                          <p class="font-size-13 line-height mb-1">Monty Carlo</p>
-                                          <div class="d-block">
-                                             <span class="font-size-13 text-warning">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             </span>
-                                          </div>
-                                       </div>
-                                       <div class="price d-flex align-items-center">
-                                          <h6><b>105.900 ₫</b></h6>
-                                       </div>
-                                       <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/04.jpg"/>" alt=""></a>
-                                       <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                       </div>
-                                    </div>
-                                    <div class="col-7">
-                                       <div class="mb-2">
-                                          <h6 class="mb-1">Siêu Cò – How To Be A Power...</h6>
-                                          <p class="font-size-13 line-height mb-1">Smith goal</p>
-                                          <div class="d-block">
-                                             <span class="font-size-13 text-warning">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             </span>
-                                          </div>
-                                       </div>
-                                       <div class="price d-flex align-items-center">
-                                          <h6><b>249.000 ₫</b></h6>
-                                       </div>
-                                       <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/05.jpg"/>" alt=""></a>
-                                       <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                       </div>
-                                    </div>
-                                    <div class="col-7">
-                                       <div class="mb-2">
-                                          <h6 class="mb-1">7 Thói Quen Của Bạn Trẻ... </h6>
-                                          <p class="font-size-13 line-height mb-1">Paige Turner</p>
-                                          <div class="d-block">
-                                             <span class="font-size-13 text-warning">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             </span>
-                                          </div>
-                                       </div>
-                                       <div class="price d-flex align-items-center">
-                                          <h6><b>95.900 ₫</b></h6>
-                                       </div>
-                                       <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
-                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/images/trendy-books/06.jpg"/>" alt=""></a>
-                                       <div class="view-book">
-                                          <a href="book-page.html" class="btn btn-sm btn-white">Xem sách</a>
-                                       </div>
-                                    </div>
-                                    <div class="col-7">
-                                       <div class="mb-2">
-                                          <h6 class="mb-1">Jeff Bezos Và Kỷ ..</h6>
-                                          <p class="font-size-13 line-height mb-1">Barb Ackue</p>
-                                          <div class="d-block">
-                                             <span class="font-size-13 text-warning">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             </span>
-                                          </div>
-                                       </div>
-                                       <div class="price d-flex align-items-center">
-                                          <h6><b>76.800 ₫</b></h6>
-                                       </div>
-                                       <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
+                              </c:forEach>
                            </ul>
                         </div>
                      </div>

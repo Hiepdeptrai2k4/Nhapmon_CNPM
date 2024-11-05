@@ -87,5 +87,6 @@
       <script src="<c:url value = "/assets/user/js/chart-custom.js"/>"></script>
       <!-- Custom JavaScript -->
       <script src="<c:url value = "/assets/user/js/custom.js"/>"></script>
+      <script src="<c:url value = "/assets/user/js/script.js"/>"></script> <!-- Liên kết đến tệp JavaScript -->
    </body>
 </html>

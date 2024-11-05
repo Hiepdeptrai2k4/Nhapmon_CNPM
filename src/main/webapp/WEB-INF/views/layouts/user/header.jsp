@@ -5,10 +5,10 @@
 <!-- Sidebar  -->
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-               <a href="index.html" class="header-logo">
+               <a href="/BookStore/" class="header-logo">
                   <img src="<c:url value = "/assets/user/images/logo.png" /> " class="img-fluid rounded-normal" alt="">
                   <div class="logo-title">
-                     <span class="text-primary text-uppercase">NHASACHTV</span>
+                     <span class="text-primary text-uppercase">NHASACHTV </span>
                   </div>
                </a>
             </div>
@@ -236,38 +236,31 @@
                         <li class="nav-item nav-icon dropdown">
                            <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
                            <i class="ri-shopping-cart-2-line"></i>
-                           <span class="badge badge-danger count-cart rounded-circle">2</span>
+                           <span class="badge badge-danger count-cart rounded-circle" id="cartSize1">${cart.size()}</span>
                            </a>
                            <div class="iq-sub-dropdown">
                               <div class="iq-card shadow-none m-0">
-                                 <div class="iq-card-body p-0 toggle-cart-info">
+                                 <div class="iq-card-body p-0 toggle-cart-info" id='cartContent'>
                                     <div class="bg-primary p-3">
-                                       <h5 class="mb-0 text-white">Giỏ Hàng<small class="badge  badge-light float-right pt-1">2</small></h5>
+                                       <h5 class="mb-0 text-white">Giỏ Hàng<small class="badge  badge-light float-right pt-1" id="cartSize2">${cart.size()}</small></h5>
                                     </div>
-                                    <a href="#" class="iq-sub-card">
+                                    <c:forEach var="entry" items="${cart}">
+                                    <c:if test="${cart.size() > 0}">
+    									<a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="rounded" src="<c:url value = "/assets/user/images/cart/01.jpg"/>" alt="">
+                                             <img class="rounded" src="<c:url value = "/assets/user/${ entry.value.book.bookImg }"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Night People book</h6>
-                                             <p class="mb-0">$32</p>
+                                             <h6 class="mb-0 ">${ entry.value.book.title }</h6>
+                                             <p class="mb-0">${ entry.value.book.price }đ</p>
                                           </div>
-                                          <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
+                                          <div class="float-right font-size-24 text-danger" onclick="deleteCart(${entry.value.book.bookID},event)"><i class="ri-close-fill"></i></div>
                                        </div>
                                     </a>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="rounded" src="<c:url value = "/assets/user/images/cart/02.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">The Sin Eater Book</h6>
-                                             <p class="mb-0">$40</p>
-                                          </div>
-                                          <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
-                                       </div>
-                                    </a>
+									</c:if>
+                                    
+                                    </c:forEach>
                                     <div class="d-flex align-items-center text-center p-3">
                                        <a class="btn btn-primary mr-2 iq-sign-btn" href="checkout.html" role="button">Giỏ Hàng</a>
                                        <a class="btn btn-primary iq-sign-btn" href="checkout.html" role="button">Thanh Toán</a>

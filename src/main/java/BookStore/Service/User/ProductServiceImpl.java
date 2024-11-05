@@ -20,4 +20,16 @@ public class ProductServiceImpl implements IProductService {
 		return book;
 	}
 
+	@Override
+	public List<Books> GetDataSomeBook(int num) {
+		
+		return booksDao.GetDataSomeBook(num);
+	}
+
+	@Override
+	public List<Books> GetDataFavorBook(int num) {
+		
+		return booksDao.GetDataFavorBook(num);
+	}
+
 }
