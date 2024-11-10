@@ -95,8 +95,8 @@
                                     <div class="iq-card-body p-0">
                                        <h3 class="mb-3">${ book.title }</h3>
                                        <div class="price d-flex align-items-center font-weight-500 mb-2">
-                                          <span class="font-size-20 pr-2 old-price">${ book.price } ₫</span>
-                                          <span class="font-size-24 text-dark">${ book.price*9/10 } ₫</span>
+                                          <span class="font-size-20 pr-2 old-price"><fmt:formatNumber value="${book.price}" type="number" groupingUsed="true" pattern="#,##0" /> ₫</span>
+                                          <span class="font-size-24 text-dark"><fmt:formatNumber value="${book.price*9/10}" type="number" groupingUsed="true" pattern="#,##0" /> ₫</span>
                                        </div>
                                        <div class="mb-3 d-block">
                                           <span class="font-size-20 text-warning">
@@ -225,7 +225,7 @@
                                           <h6><b>${ item.price } ₫</b></h6>
                                        </div>
                                        <div class="iq-product-action">
-                                          <a href="javascript:void();"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
+                                          <a href="javascript:void();" onclick="addCart(${item.bookID});"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
                                           <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
                                        </div>
                                     </div>

@@ -70,7 +70,8 @@
                                                 </div>
                                              </div>
                                              <div class="price d-flex align-items-center">
-                                                <h6><b>${ item.price } đ</b></h6>
+                                             
+                                                <h6><b><fmt:formatNumber value="${item.price}" type="number" groupingUsed="true" pattern="#,##0" /> đ</b></h6>
                                              </div>
                                              <div class="iq-product-action">
                                                 <a href="javascript:void();" onclick="addCart(${item.bookID});"><i class="ri-shopping-cart-2-fill text-primary"></i></a>

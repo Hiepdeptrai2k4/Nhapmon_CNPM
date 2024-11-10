@@ -117,15 +117,15 @@
 															</div>
 														</div>
 														<div class="price d-flex align-items-center">
-															<span class="pr-1 old-price">${ item.price }</span>
+															<span class="pr-1 old-price"><fmt:formatNumber value="${item.price}" type="number" groupingUsed="true" pattern="#,##0" /></span>
 															<div>
 															<h6>
-																<b>${ item.price*9/10 }</b>
+																<b><fmt:formatNumber value="${item.price*9/10}" type="number" groupingUsed="true" pattern="#,##0" /></b>
 															</h6>
 															</div>
 														</div>
 														<div class="iq-product-action">
-															<a href="javascript:void();"><i
+															<a href="javascript:void();" onclick="addCart(${item.bookID});"><i
 																class="ri-shopping-cart-2-fill text-primary"></i></a> <a
 																href="javascript:void();" class="ml-2"><i
 																class="ri-heart-fill text-danger"></i></a>

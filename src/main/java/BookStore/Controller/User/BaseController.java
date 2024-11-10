@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,9 +31,19 @@ public class BaseController {
         return cart;
     }
 	
+	public HashMap<Integer, CartItems> loadCart(HttpSession session, Model model) {
+		HashMap<Integer, CartItems> cart = (HashMap<Integer, CartItems>)session.getAttribute("cart");
+		if (cart==null) {
+    		cart = new HashMap<Integer, CartItems>();
+    	}
+		model.addAttribute("cart", cart);
+		return cart;
+	}
+	
 	@PostConstruct
 	public ModelAndView Init () {
 		//_mvShare.addObject("menus",_homeService.GetDataMenus());
+		
 		return _mvShare;
 	}
 }

@@ -1,7 +1,10 @@
 package BookStore.Controller.User;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,9 +18,9 @@ public class ProductController extends BaseController {
 	ProductServiceImpl productServiceImpl;
 	
 	@RequestMapping(value = {"/details/{id}"})
-	public ModelAndView Index(@PathVariable int id) {
+	public ModelAndView Index(@PathVariable int id,HttpSession session, Model model) {
 		//ModelAndView mv= new ModelAndView("user/index");
-		
+		loadCart(session,model);
 		_mvShare.addObject("book",productServiceImpl.GetDataBookById(id));
 		_mvShare.addObject("fivebooks",productServiceImpl.GetDataSomeBook(5));
 		_mvShare.addObject("favorbooks",productServiceImpl.GetDataFavorBook(6));

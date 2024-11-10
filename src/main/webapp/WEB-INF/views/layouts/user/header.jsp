@@ -240,7 +240,7 @@
                            </a>
                            <div class="iq-sub-dropdown">
                               <div class="iq-card shadow-none m-0">
-                                 <div class="iq-card-body p-0 toggle-cart-info" id='cartContent'>
+                                 <div class="iq-card-body p-0 toggle-cart-info" id='cartContent' style="max-height: 500px; overflow-y: auto;">
                                     <div class="bg-primary p-3">
                                        <h5 class="mb-0 text-white">Giỏ Hàng<small class="badge  badge-light float-right pt-1" id="cartSize2">${cart.size()}</small></h5>
                                     </div>
@@ -253,7 +253,7 @@
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">${ entry.value.book.title }</h6>
-                                             <p class="mb-0">${ entry.value.book.price }đ</p>
+                                             <p class="mb-0"><fmt:formatNumber value="${ entry.value.book.price }" type="number" groupingUsed="true" pattern="#,##0" /> đ</p>
                                           </div>
                                           <div class="float-right font-size-24 text-danger" onclick="deleteCart(${entry.value.book.bookID},event)"><i class="ri-close-fill"></i></div>
                                        </div>
@@ -261,11 +261,12 @@
 									</c:if>
                                     
                                     </c:forEach>
-                                    <div class="d-flex align-items-center text-center p-3">
-                                       <a class="btn btn-primary mr-2 iq-sign-btn" href="checkout.html" role="button">Giỏ Hàng</a>
-                                       <a class="btn btn-primary iq-sign-btn" href="checkout.html" role="button">Thanh Toán</a>
-                                    </div>
+                                    
                                  </div>
+                                 <div class="d-flex align-items-center text-center p-3">
+                                       <a class="btn btn-primary mr-2 iq-sign-btn" href="#" role="button">Giỏ Hàng</a>
+                                       <a class="btn btn-primary iq-sign-btn" href="/BookStore/checkout" role="button">Thanh Toán</a>
+                                    </div>
                               </div>
                            </div>
                         </li>

@@ -38,7 +38,7 @@ public class CartController extends BaseController{
     	model.addAttribute("cart", cart);
     	Map<String, Object> response = new HashMap<>();
         response.put("size", cart.size()); // Số lượng sản phẩm trong giỏ hàng
-
+        response.put("totalprice", cartService.totalPrice(cart));
         // Danh sách các sản phẩm trong giỏ hàng
         List<Map<String, Object>> items = new ArrayList<>();
         for (CartItems item : cart.values()) {
@@ -68,7 +68,7 @@ public class CartController extends BaseController{
     	model.addAttribute("cart", cart);
     	Map<String, Object> response = new HashMap<>();
         response.put("size", cart.size()); // Số lượng sản phẩm trong giỏ hàng
-
+        response.put("totalprice", cartService.totalPrice(cart));
         // Danh sách các sản phẩm trong giỏ hàng
         List<Map<String, Object>> items = new ArrayList<>();
         for (CartItems item : cart.values()) {
