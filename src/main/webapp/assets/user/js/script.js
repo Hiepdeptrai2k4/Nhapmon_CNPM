@@ -124,7 +124,10 @@ function increaseCounter() {
 
                     // Cập nhật view giỏ hàng trong check out
                     updateCartViewCheckout(data.cart); // Gọi hàm cập nhật view
+                    updateCartView(data.cart)
                     updatePrice(data.totalprice);
+                    document.getElementById("cartSize2").innerText = data.size;
+                    document.getElementById("cartSize1").innerText = data.size;
                 } else {
                     console.error("Size not found in the response");
                     
@@ -213,3 +216,29 @@ function increaseCounter() {
             
             
         }
+        function editCart(id,quanty) {
+        	console.log('Edit Cart:', id);
+            fetch('/BookStore/editcart/'+id+'/'+quanty, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json()) // Nhận dữ liệu trả về từ server
+            .then(data => {
+            	console.log('Data returned from server:', data); // Kiểm tra dữ liệu trả về
+
+                if (data && data.size !== undefined) {
+                    console.log('Data returned from server:', data); 
+                    updatePrice(data.totalprice);
+                } else {
+                    console.error("Size not found in the response");
+                    
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        
+        

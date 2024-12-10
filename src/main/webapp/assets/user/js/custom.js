@@ -649,7 +649,7 @@ Index Of Script
                 jQuery('#cart').removeClass('show');
                 jQuery('#address').addClass('show');
             });
-            jQuery('#deliver-address').click(function(){
+            jQuery('#deliver-address-btn').click(function(){
                 jQuery('#address').removeClass('show');
                 jQuery('#payment').addClass('show');
             });
@@ -666,28 +666,35 @@ Index Of Script
         /*---------------------------------------------------------------------
         Button 
         -----------------------------------------------------------------------*/
-
+		
+		
+		
         jQuery('.qty-btn').on('click',function(){
-          var id = jQuery(this).attr('id');
+          var id = jQuery(this).attr('id');  // Lấy ID của button (btn-minus1, btn-plus1, etc.)
+    		
+    // Tạo ID input tương ứng từ ID của button
+    		let idNum = id.match(/\d+$/)[0];  // Chuyển 'btn-' thành 'quantity'
+    		
+    		let inputId = `quantity${idNum}`;
+    		var input = jQuery('#' + inputId);  // Lấy phần tử input theo ID tương ứng
+			 
 
-          var val = parseInt(jQuery('#quantity').val());
+				
+			
+    		var val = parseInt(input.val());  // Lấy giá trị của input
 
-          if(id == 'btn-minus')
-          {
-            if(val != 0)
-            {
-              jQuery('#quantity').val(val-1);
-            }
-            else
-            {
-              jQuery('#quantity').val(0);
-            }
-
-          }
-          else
-          {
-            jQuery('#quantity').val(val+1);
-          }
+    		if (id.indexOf('minus') !== -1) {  // Kiểm tra nếu là nút giảm
+        		if (val > 1) {
+					editCart(idNum,val-1)
+            		input.val(val - 1);
+        		} else {
+            		input.val(1);
+            		editCart(idNum,1)
+        		}
+    		} else {  // Nếu là nút cộng
+        		input.val(val + 1);
+        		editCart(idNum,val+1)
+    		}
         });
 
 

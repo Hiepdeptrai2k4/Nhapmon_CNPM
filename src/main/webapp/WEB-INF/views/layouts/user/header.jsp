@@ -272,17 +272,40 @@
                         </li>
                         <li class="line-height pt-3">
                            <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
+                           	<c:if test="${ not empty LoginInfo }">
                               <img src="<c:url value = "/assets/user/images/user/1.jpg"/> " class="img-fluid rounded-circle mr-3" alt="user">
                               <div class="caption">
                                  <h6 class="mb-1 line-height">Ông Trần Thuận</h6>
                                  <p class="mb-0 text-primary">Tài Khoản</p>
                               </div>
+                             </c:if>
+                             <c:if test="${ empty LoginInfo }">
+                              <img src="<c:url value = "/assets/user/images/user/1.jpg"/> " class="img-fluid rounded-circle mr-3" alt="user">
+                              <div class="caption">
+                                 <h6 class="mb-1 line-height">Khách</h6>
+                                 <p class="mb-0 text-primary">Tài Khoản</p>
+                              </div>
+                             </c:if>
                            </a>
                            <div class="iq-sub-dropdown iq-user-dropdown">
                               <div class="iq-card shadow-none m-0">
-                                 <div class="iq-card-body p-0 ">
+                              	<c:if test="${ empty LoginInfo }">
+                              		<div class="iq-card-body p-0 ">
+                                 
                                     <div class="bg-primary p-3">
-                                       <h5 class="mb-0 text-white line-height">Xin Chào Ông Trần Thuận</h5>
+                                       <h5 class="mb-0 text-white line-height">Xin Chào Khách</h5>
+                                    </div>
+                                    
+                                    <div class="d-inline-block w-100 text-center p-3">
+                                       <a class="bg-primary iq-sign-btn" href="/BookStore/authen/login" role="button">Đăng nhập<i class="ri-login-box-line ml-2"></i></a>
+                                    </div>
+                                 </div>
+                              	</c:if>
+                              	<c:if test="${ not empty LoginInfo }">
+                              			<div class="iq-card-body p-0 ">
+                                 
+                                    <div class="bg-primary p-3">
+                                       <h5 class="mb-0 text-white line-height">Xin Chào ${ LoginInfo.username }</h5>
                                     </div>
                                     <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
                                        <div class="media align-items-center">
@@ -325,9 +348,11 @@
                                        </div>
                                     </a>
                                     <div class="d-inline-block w-100 text-center p-3">
-                                       <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                       <a class="bg-primary iq-sign-btn" href="/BookStore/authen/logout" role="button">Đăng xuất<i class="ri-login-box-line ml-2"></i></a>
                                     </div>
                                  </div>
+                              	</c:if>
+                                 
                               </div>
                            </div>
                         </li>
