@@ -1,19 +1,21 @@
 package BookStore.Entity;
 
 public class CartItems {
-	int cartId;
+	int userId;
 	int bookId;
+	
 	int quantity;
 	Books book;
 	
 	public CartItems() {
 		super();
 	}
-	public int getCartId() {
-		return cartId;
+	public int getUserId() {
+		return userId;
 	}
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public int getBookId() {
 		return bookId;

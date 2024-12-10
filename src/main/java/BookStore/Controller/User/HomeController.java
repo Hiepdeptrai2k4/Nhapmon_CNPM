@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import BookStore.Dao.CartItemsDao;
 import BookStore.Entity.CartItems;
 import BookStore.Service.User.ProductServiceImpl;
 
@@ -24,6 +25,9 @@ import BookStore.Service.User.ProductServiceImpl;
 public class HomeController extends BaseController{
 	@Autowired
 	ProductServiceImpl productServiceImpl;
+	@Autowired
+	CartItemsDao cartItemsDao;
+	
 	
 	 private int counter = 10; 
 	
