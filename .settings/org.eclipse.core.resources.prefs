@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/main/java/BookStore/Controller/Admin/AddAuthorsController.java=UTF-8
+encoding//src/main/java/BookStore/Controller/Admin/AddBooksController.java=UTF-8
+encoding//src/main/java/BookStore/Controller/Admin/AddCategorysController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/dashboard.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/index.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/layouts/admin.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/user/index.jsp=UTF-8
