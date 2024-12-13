@@ -48,6 +48,7 @@ public class BillsDao extends BaseDao{
         int billID = keyHolder.getKey().intValue();
         
         
-        return keyHolder.getKey().intValue();
+        return billID;
     }
+	
 }

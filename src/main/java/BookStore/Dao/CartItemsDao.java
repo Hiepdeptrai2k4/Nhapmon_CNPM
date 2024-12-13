@@ -96,5 +96,12 @@ public class CartItemsDao extends BaseDao {
 		int insert= _jdbcTemplate.update(sql.toString());
 		return insert;
 	}
-	
+	public int DeleteAll(int userID) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("DELETE ");
+		sql.append("FROM cartitems ");
+		sql.append("WHERE UserID = " + userID+" ");
+		int insert= _jdbcTemplate.update(sql.toString());
+		return insert;
+	}
 }

@@ -70,8 +70,10 @@ public class CheckoutController extends BaseController{
 		}
 		Users user = (Users) session.getAttribute("LoginInfo");
 		Bills bill = dataService.getBills();
-		billServiceImpl.addBills(user, bill, cartService.totalPrice(cart));
-		
+		cart = billServiceImpl.addBills(user, bill, cart);
+		session.removeAttribute("cart");
+		session.setAttribute("cart", cart);
+    	model.addAttribute("cart", cart);
 		_mvShare.addObject("totalprice",cartService.totalPrice(cart));
 		
 		//_mvShare.addObject("products",_homeService.GetDataProducts());
