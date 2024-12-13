@@ -8,8 +8,7 @@
          <div id="content-page" class="content-page">
             <div class="container-fluid">
             	
-				<h1>Counter: <span id="counter">${ number }</span></h1>  <!-- Hiển thị số đếm -->
-    			<button onclick="increaseCounter()">Increase</button> <!-- Nút để tăng số -->
+				
                   <div class="col-lg-12">
                      <div class="iq-card-transparent iq-card-block iq-card-stretch iq-card-height rounded">
                         <div class="newrealease-contens">

@@ -99,7 +99,9 @@
                                     <span class="text-dark"><strong>Tổng</strong></span>
                                     <span class="text-dark" id="finalPrice"><strong><fmt:formatNumber value="${ totalprice*9/10 }" type="number" groupingUsed="true" pattern="#,##0" /> đ</strong></span>
                                  </div>
+                                 <c:if test="${cart.size() > 0}">
                                  <a id="place-order" href="javascript:void();" class="btn btn-primary d-block mt-3 next">Đặt hàng</a>
+                                 </c:if>
                               </div>
                            </div>
                            <div class="iq-card ">
