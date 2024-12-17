@@ -16,49 +16,30 @@
                <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
                      <li class="active active-menu">
-                        <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Trang Chủ</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Shop</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                           <li><a href="/BookStore"><i class="las la-house-damage"></i>Home Page</a></li>
+                           <li class="active"><a href="/BookStore/category/3"><i class="ri-function-line"></i>Category Page</a></li>
                         </ul>
                      </li>
+                     
+                     <c:if test="${ not empty LoginInfo }">
                      <li>
-                        <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>Danh mục sản phẩm</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li class="elements">
-                              <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sách Trong Nước</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                           </li>
-                           <li class="elements">
-                              <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sách Kinh Tế</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                           </li>
-                           <li class="elements">
-                              <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sách Ngoại Ngữ</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                           </li>
-                           <li class="elements">
-                              <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sách Văn Học</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                           </li>                                                   
+                        <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
+                           <li><a href="/BookStore/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
+                           <li><a href="/BookStore/profile/edit"><i class="las la-edit"></i>User Edit</a></li>
+                           
                         </ul>
                      </li>
-                     <li>
-                        <a href="#pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-alt iq-arrow-left"></i><span>Admin Dashboard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li><a href="admin-dashboard.html"><i class="ri-question-answer-line"></i>Dashboard</a></li>
-
-                           <li>
-                              <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                              <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                 <li><a href="pages-invoice.html"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                 <li><a href="pages-comingsoon.html"><i class="ri-mastercard-line"></i>Login</a></li>
-                                 <li><a href="pages-faq.html"><i class="ri-compasses-line"></i>Register</a></li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </li>
-                     <li><a href="book-page.html"><i class="ri-book-line"></i>Yêu Thích</a></li>
-                     <li><a href="book-pdf.html"><i class="ri-book-line"></i>Sách PDF</a></li>
-                     <li><a href="sign-in.html"><i class="ri-book-line"></i>Logout</a></li>
-
+                     </c:if>
+                     
+                     
                   </ul>
                </nav>
+               
             </div>
+            
          </div>
          <!-- TOP Nav Bar -->
          <div class="iq-top-navbar">
@@ -163,76 +144,7 @@
                               </div>
                            </div>
                         </li>
-                        <li class="nav-item nav-icon dropdown">
-                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                           <i class="ri-mail-line"></i>
-                           <span class="bg-primary dots"></span>
-                           </a>
-                           <div class="iq-sub-dropdown">
-                              <div class="iq-card shadow-none m-0">
-                                 <div class="iq-card-body p-0 ">
-                                    <div class="bg-primary p-3">
-                                       <h5 class="mb-0 text-white">Tin Nhắn<small class="badge  badge-light float-right pt-1">5</small></h5>
-                                    </div>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/01.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">QT Shop</h6>
-                                             <small class="float-left font-size-12">13 Jun</small>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/02.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Tran Thuan Store</h6>
-                                             <small class="float-left font-size-12">20 Apr</small>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/03.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Hoang Vu Book</h6>
-                                             <small class="float-left font-size-12">30 Jun</small>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/04.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Quang Minh Book</h6>
-                                             <small class="float-left font-size-12">12 Sep</small>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card">
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/05.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">TV Team</h6>
-                                             <small class="float-left font-size-12">5 Dec</small>
-                                          </div>
-                                       </div>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </li>
+                        
                         <li class="nav-item nav-icon dropdown">
                            <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
                            <i class="ri-shopping-cart-2-line"></i>
@@ -272,17 +184,40 @@
                         </li>
                         <li class="line-height pt-3">
                            <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
+                           	<c:if test="${ not empty LoginInfo }">
                               <img src="<c:url value = "/assets/user/images/user/1.jpg"/> " class="img-fluid rounded-circle mr-3" alt="user">
                               <div class="caption">
                                  <h6 class="mb-1 line-height">Ông Trần Thuận</h6>
                                  <p class="mb-0 text-primary">Tài Khoản</p>
                               </div>
+                             </c:if>
+                             <c:if test="${ empty LoginInfo }">
+                              <img src="<c:url value = "/assets/user/images/user/1.jpg"/> " class="img-fluid rounded-circle mr-3" alt="user">
+                              <div class="caption">
+                                 <h6 class="mb-1 line-height">Khách</h6>
+                                 <p class="mb-0 text-primary">Tài Khoản</p>
+                              </div>
+                             </c:if>
                            </a>
                            <div class="iq-sub-dropdown iq-user-dropdown">
                               <div class="iq-card shadow-none m-0">
-                                 <div class="iq-card-body p-0 ">
+                              	<c:if test="${ empty LoginInfo }">
+                              		<div class="iq-card-body p-0 ">
+                                 
                                     <div class="bg-primary p-3">
-                                       <h5 class="mb-0 text-white line-height">Xin Chào Ông Trần Thuận</h5>
+                                       <h5 class="mb-0 text-white line-height">Xin Chào Khách</h5>
+                                    </div>
+                                    
+                                    <div class="d-inline-block w-100 text-center p-3">
+                                       <a class="bg-primary iq-sign-btn" href="/BookStore/authen/login" role="button">Đăng nhập<i class="ri-login-box-line ml-2"></i></a>
+                                    </div>
+                                 </div>
+                              	</c:if>
+                              	<c:if test="${ not empty LoginInfo }">
+                              			<div class="iq-card-body p-0 ">
+                                 
+                                    <div class="bg-primary p-3">
+                                       <h5 class="mb-0 text-white line-height">Xin Chào ${ LoginInfo.username }</h5>
                                     </div>
                                     <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
                                        <div class="media align-items-center">
@@ -325,9 +260,11 @@
                                        </div>
                                     </a>
                                     <div class="d-inline-block w-100 text-center p-3">
-                                       <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                       <a class="bg-primary iq-sign-btn" href="/BookStore/authen/logout" role="button">Đăng xuất<i class="ri-login-box-line ml-2"></i></a>
                                     </div>
                                  </div>
+                              	</c:if>
+                                 
                               </div>
                            </div>
                         </li>

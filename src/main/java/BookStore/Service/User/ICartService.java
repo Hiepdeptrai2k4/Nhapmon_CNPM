@@ -10,9 +10,10 @@ import BookStore.Entity.CartItems;
 @Service
 public interface ICartService {
 	@Autowired
-	public HashMap<Integer, CartItems> AddCart(int bookId,  HashMap<Integer, CartItems> cart );
-	public HashMap<Integer, CartItems> EditCart(int bookId,int quantity,  HashMap<Integer, CartItems> cart );
-	public HashMap<Integer, CartItems> DeleteCart(int bookId,  HashMap<Integer, CartItems> cart );
-	public double totalPrice(HashMap<Integer, CartItems> cart);
+	public HashMap<Integer, CartItems> LoadCart(int userID,  HashMap<Integer, CartItems> cart);
+	public HashMap<Integer, CartItems> AddCart(int userID,int bookId,  HashMap<Integer, CartItems> cart );
+	public HashMap<Integer, CartItems> EditCart(int userID,int bookId,int quantity,  HashMap<Integer, CartItems> cart );
+	public HashMap<Integer, CartItems> DeleteCart(int userID,int bookId,  HashMap<Integer, CartItems> cart );
+	public int totalPrice(HashMap<Integer, CartItems> cart);
 	
 }

@@ -3,6 +3,9 @@
 	  <pattern>/admin</pattern>
 		<pattern>/admin/*</pattern>
 	</decorator>
+	<decorator name="authen" page="authen.jsp">
+		<pattern>/authen/*</pattern>
+	</decorator>
 	<decorator name="user" page="user.jsp">
 		<pattern>/*</pattern>
 		<excludes>/admin/*</excludes>

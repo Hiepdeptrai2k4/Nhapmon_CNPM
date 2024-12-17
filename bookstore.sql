@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2024 at 03:31 PM
+-- Generation Time: Dec 13, 2024 at 08:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -55,6 +55,61 @@ INSERT INTO `authors` (`AuthorID`, `AuthorName`, `AuthorImg`, `Information`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `billdetails`
+--
+
+CREATE TABLE `billdetails` (
+  `BillID` int(11) NOT NULL,
+  `BookID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `billdetails`
+--
+
+INSERT INTO `billdetails` (`BillID`, `BookID`, `quantity`) VALUES
+(12, 10, 1),
+(12, 12, 1),
+(13, 6, 2),
+(13, 8, 2),
+(13, 10, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bills`
+--
+
+CREATE TABLE `bills` (
+  `BillID` int(11) NOT NULL,
+  `UserID` int(11) DEFAULT NULL,
+  `Phone` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  `Time` varchar(255) DEFAULT NULL,
+  `Total` int(11) NOT NULL,
+  `State` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`BillID`, `UserID`, `Phone`, `Name`, `Address`, `Time`, `Total`, `State`) VALUES
+(2, 3, '0396748857', 'Nguyễn Thế Văn', 'Hai Bà Trưng, Hà Nội', '2024-12-06 00:22:52', 464000, 1),
+(3, NULL, '0396748857', 'Nguyễn Thế Văn test guest', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-06 20:38:58', 0, 1),
+(4, NULL, '0396748857', 'Nguyễn Thế Văn Guest', 'Kí túc xá Bách Khoa, Phường Bách Khoa, Quận Hai Bà Trưng, Hà Nội, Việt Nam', '2024-12-06 20:39:49', 500000, 1),
+(8, NULL, '0396748857', 'Nguyễn Thế Văn', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-06 21:49:27', 215000, 1),
+(9, NULL, '0396748857', 'Nguyễn Thế Văn', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-06 21:58:52', 465000, 1),
+(10, NULL, '0396748857', 'Nguyễn Thế Văn', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-06 22:03:34', 480000, 1),
+(11, 14, '0396748857', 'Nguyễn MinhĐức', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-06 22:04:27', 315000, 1),
+(12, NULL, '0396748857', 'Nguyễn Thế Văn', 'Phuong Bach Khoa, Quan Hai BaTrung', '2024-12-13 14:46:24', 240000, 1),
+(13, 14, '0396748857', 'Nguyễn MinhĐức', 'Phường Bách Khoa', '2024-12-13 14:48:25', 793000, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `books`
 --
 
@@ -97,10 +152,23 @@ INSERT INTO `books` (`BookID`, `Title`, `AuthorID`, `Description`, `Price`, `Sto
 --
 
 CREATE TABLE `cartitems` (
-  `CartID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
   `BookID` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cartitems`
+--
+
+INSERT INTO `cartitems` (`UserID`, `BookID`, `quantity`) VALUES
+(3, 6, 1),
+(3, 10, 1),
+(3, 11, 1),
+(9, 3, 4),
+(9, 10, 2),
+(13, 5, 2),
+(13, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -137,17 +205,54 @@ INSERT INTO `genres` (`GenreID`, `GenreName`, `Description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE `profiles` (
+  `UserID` int(11) NOT NULL,
+  `FirstName` varchar(255) DEFAULT NULL,
+  `LastName` varchar(255) DEFAULT NULL,
+  `Gender` int(11) DEFAULT NULL,
+  `Year` int(11) DEFAULT NULL,
+  `Month` int(11) DEFAULT NULL,
+  `Day` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`UserID`, `FirstName`, `LastName`, `Gender`, `Year`, `Month`, `Day`) VALUES
+(3, 'Nguyễn Thế ', 'Văn', 0, 2005, 4, 23),
+(9, 'Nguyễn Trung', 'Kiên', 0, 2004, 12, 5),
+(13, 'Nguyễn Minh', 'Hải', 0, 2004, 6, 25),
+(14, 'Nguyễn Minh', 'Đức', 0, 2004, 12, 25);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `UserID` int(11) NOT NULL,
   `Username` varchar(255) NOT NULL,
-  `PassworkHash` varchar(255) NOT NULL,
+  `PasswordHash` varchar(255) NOT NULL,
   `Phone` varchar(255) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `Username`, `PasswordHash`, `Phone`, `Address`, `Email`) VALUES
+(3, 'thevan2404', '$2a$12$yZLGl10MWrunwQED0yBwKOa5/f.YiLoyKAsLvjJ6Q383UcqYpTUI2', '0396748857', 'Hai Bà Trưng, Hà Nội', 'Van.NT220049@sis.hust.edu.vn'),
+(8, 'admin', '$2a$12$R0Sb.7yoSsFrnGjfGyB20upWwBfmmkDqlmNAHt64jjDnldqXfd/o2', NULL, NULL, 'admin@123'),
+(9, 'test', '$2a$12$AfXrGMYP60U5cKBUrKrmPOr9LoB0Ffh57sgiF/QAw0Ed1GtrOgY/6', NULL, NULL, 'test@123'),
+(13, 'tes2', '$2a$12$1DxMORuqB9IqOyI7TvEaz.KtWMCfbuE8zpTsEP96D7zMoQoD7p6/2', NULL, NULL, 'nan@gmail.com'),
+(14, 'test3', '$2a$12$jDszp7BW9bwq14k1WeOko.cgnq5C6bOj51wvxrJsPGwE4gb4jd3XC', NULL, NULL, 'nan@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -158,6 +263,20 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`AuthorID`);
+
+--
+-- Indexes for table `billdetails`
+--
+ALTER TABLE `billdetails`
+  ADD PRIMARY KEY (`BillID`,`BookID`),
+  ADD KEY `Bookcon` (`BookID`);
+
+--
+-- Indexes for table `bills`
+--
+ALTER TABLE `bills`
+  ADD PRIMARY KEY (`BillID`),
+  ADD KEY `user_contrain123` (`UserID`);
 
 --
 -- Indexes for table `books`
@@ -171,8 +290,8 @@ ALTER TABLE `books`
 -- Indexes for table `cartitems`
 --
 ALTER TABLE `cartitems`
-  ADD PRIMARY KEY (`CartID`,`BookID`),
-  ADD KEY `BookID` (`BookID`);
+  ADD PRIMARY KEY (`UserID`,`BookID`),
+  ADD KEY `book_contrain` (`BookID`);
 
 --
 -- Indexes for table `carts`
@@ -186,6 +305,12 @@ ALTER TABLE `carts`
 --
 ALTER TABLE `genres`
   ADD PRIMARY KEY (`GenreID`);
+
+--
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`UserID`);
 
 --
 -- Indexes for table `users`
@@ -205,6 +330,12 @@ ALTER TABLE `authors`
   MODIFY `AuthorID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `bills`
+--
+ALTER TABLE `bills`
+  MODIFY `BillID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
@@ -220,17 +351,30 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `GenreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `GenreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `billdetails`
+--
+ALTER TABLE `billdetails`
+  ADD CONSTRAINT `Bookcon` FOREIGN KEY (`BookID`) REFERENCES `books` (`BookID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `billscontrain` FOREIGN KEY (`BillID`) REFERENCES `bills` (`BillID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bills`
+--
+ALTER TABLE `bills`
+  ADD CONSTRAINT `user_contrain123` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `books`
@@ -243,14 +387,20 @@ ALTER TABLE `books`
 -- Constraints for table `cartitems`
 --
 ALTER TABLE `cartitems`
-  ADD CONSTRAINT `cartitems_ibfk_1` FOREIGN KEY (`CartID`) REFERENCES `carts` (`CartID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `cartitems_ibfk_2` FOREIGN KEY (`BookID`) REFERENCES `books` (`BookID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `book_contrain` FOREIGN KEY (`BookID`) REFERENCES `books` (`BookID`),
+  ADD CONSTRAINT `user_contrain` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 
 --
 -- Constraints for table `carts`
 --
 ALTER TABLE `carts`
   ADD CONSTRAINT `user` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
+
+--
+-- Constraints for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
