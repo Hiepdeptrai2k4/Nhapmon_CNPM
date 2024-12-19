@@ -86,6 +86,7 @@ public class AuthenController extends BaseController {
 	public String Logout(HttpSession session, HttpServletRequest request) {
 		session.removeAttribute("cart");
 		session.removeAttribute("LoginInfo");
+		session.removeAttribute("bill");
 		return "redirect:"+request.getHeader("Referer");
 	}
 }

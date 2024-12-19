@@ -3,6 +3,7 @@ package BookStore.Controller.User;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -71,6 +72,13 @@ public class CheckoutController extends BaseController{
 		Users user = (Users) session.getAttribute("LoginInfo");
 		Bills bill = dataService.getBills();
 		cart = billServiceImpl.addBills(user, bill, cart);
+		
+		List<Bills> bills = loadBill(session,model);
+		
+		session.removeAttribute("bill");
+		session.setAttribute("bill", bills);
+    	model.addAttribute("bill", bills);
+		
 		session.removeAttribute("cart");
 		session.setAttribute("cart", cart);
     	model.addAttribute("cart", cart);

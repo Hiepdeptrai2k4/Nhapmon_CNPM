@@ -1,6 +1,8 @@
 package BookStore.Controller.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import BookStore.Entity.CartItems;
+import BookStore.Entity.Users;
+import BookStore.Entity.Bills;
+import BookStore.Service.User.BillServiceImpl;
 import BookStore.Service.User.HomeServiceImpl;
 
 
@@ -19,6 +24,9 @@ import BookStore.Service.User.HomeServiceImpl;
 public class BaseController {
 	@Autowired
 	HomeServiceImpl _homeService;
+	@Autowired
+	BillServiceImpl _billServiceImpl;
+	
 	public ModelAndView _mvShare = new ModelAndView();
 	
 	@ModelAttribute("cart")
@@ -38,6 +46,17 @@ public class BaseController {
     	}
 		model.addAttribute("cart", cart);
 		return cart;
+	}
+	@ModelAttribute("bill")
+	public List<Bills> loadBill(HttpSession session, Model model) {
+		List<Bills> bills = new ArrayList<Bills>();
+		if(session.getAttribute("LoginInfo")==null) {
+		
+		return bills;
+		}
+		Users user = (Users) session.getAttribute("LoginInfo");
+		bills= _billServiceImpl.getBills(user);
+		return bills;
 	}
 	
 	@PostConstruct

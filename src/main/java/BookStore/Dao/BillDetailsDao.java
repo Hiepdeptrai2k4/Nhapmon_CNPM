@@ -1,12 +1,17 @@
 package BookStore.Dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import BookStore.Entity.BillDetails;
+import BookStore.Entity.Bills;
 import BookStore.Entity.CartItems;
+import BookStore.Entity.MapperBillDetails;
 
 @Repository
 public class BillDetailsDao extends BaseDao {
@@ -42,4 +47,11 @@ public class BillDetailsDao extends BaseDao {
 		}
 		return check;
 	}
+	
+	public List<BillDetails> GetDataBill(int billID){
+		List<BillDetails> list = new ArrayList<BillDetails>();
+		String sql = "SELECT * FROM billdetails where BillID = "+billID;
+		list = _jdbcTemplate.query(sql, new MapperBillDetails());
+		return list;
+	} 
 }

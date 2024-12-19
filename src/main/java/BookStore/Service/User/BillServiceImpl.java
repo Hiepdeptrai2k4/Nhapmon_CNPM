@@ -3,6 +3,7 @@ package BookStore.Service.User;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import BookStore.Dao.BillDetailsDao;
 import BookStore.Dao.BillsDao;
 import BookStore.Dao.CartItemsDao;
+import BookStore.Entity.BillDetails;
 import BookStore.Entity.Bills;
 import BookStore.Entity.CartItems;
 import BookStore.Entity.Users;
@@ -47,6 +49,22 @@ public class BillServiceImpl implements IBillService{
 			cart.clear();
 		}
 		return cart;
+	}
+
+
+	@Override
+	public List<Bills> getBills(Users user) {
+		if(user==null) return null;
+		List<Bills> list = billsDao.GetDataBill(user.getUserID());
+		
+		return list;
+	}
+
+
+	@Override
+	public List<BillDetails> getBillDetails(int billID) {
+		
+		return billDetailDao.GetDataBill(billID);
 	}
 	
 }

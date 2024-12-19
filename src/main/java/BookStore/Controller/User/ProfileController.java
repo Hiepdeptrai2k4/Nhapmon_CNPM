@@ -34,6 +34,7 @@ public class ProfileController extends BaseController {
 		}
 		_mvShare.addObject("profileForm", new UserProfiles());
 		loadCart(session,model);
+		loadBill(session,model);
 		_mvShare.addObject("profile",profilesServiceImlp.GetDataProfiles(user.getUserID()));
 		_mvShare.setViewName("user/edit_profile");
 		return _mvShare;

@@ -3,8 +3,12 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<body>
-<div id="content-page" class="content-page">
+
+   <body>
+      
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+         <div id="content-page" class="content-page">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-6 col-lg-3">
@@ -221,5 +225,24 @@
                </div>
             </div>
          </div>
+      </div>
+      <!-- Wrapper END -->
+      <!-- Footer -->
+      <footer class="iq-footer">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-lg-6">
+                  <ul class="list-inline mb-0">
+                     <li class="list-inline-item"><a href="privacy-policy.html">Chính sách</a></li>
+                     <li class="list-inline-item"><a href="terms-of-service.html">Điều khoản</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Footer END -->
+      <!-- color-customizer -->
+   
+      <!-- color-customizer END -->
       
-</body>
+   </body>

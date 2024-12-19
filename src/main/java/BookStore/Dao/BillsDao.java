@@ -3,6 +3,8 @@ package BookStore.Dao;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +13,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import BookStore.Entity.Bills;
-import BookStore.Entity.CartItems;
+
+import BookStore.Entity.MapperBills;
 @Transactional
 @Repository
 public class BillsDao extends BaseDao{
@@ -51,4 +54,10 @@ public class BillsDao extends BaseDao{
         return billID;
     }
 	
+	public List<Bills> GetDataBill(int userID){
+		List<Bills> list = new ArrayList<Bills>();
+		String sql = "SELECT * FROM bills where UserID = "+userID;
+		list = _jdbcTemplate.query(sql, new MapperBills());
+		return list;
+	} 
 }

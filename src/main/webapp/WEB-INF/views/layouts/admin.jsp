@@ -3,14 +3,15 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
-   <head>
+<!doctype html>
+<html lang="en">
+ <head>
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Admin Dashboard - NHASACHTV</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="shortcut icon" href="<c:url value = "/assets/user/images/favicon.ico"/>" >
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="<c:url value = "/assets/user/css/bootstrap.min.css"/>">
       <!-- Typography CSS -->
@@ -18,30 +19,27 @@
       <!-- Style CSS -->
       <link rel="stylesheet" href="<c:url value = "/assets/user/css/style.css"/>">
       <!-- Responsive CSS -->
-      <link rel="stylesheet" href="<c:url value = "/assets/user/css/responsive.css"/>">
+      <link rel="stylesheet" href="<c:url value = "/assets/user/css/responsive.css"/>" >
    </head>
    <body>
-      <!-- loader Start -->
-      <div id="loading">
-         <div id="loading-center">
-         </div>
-      </div>
-      <!-- loader END -->
-      <!-- Wrapper Start -->
+    <div class="wrapper">
       <%@include file="/WEB-INF/views/layouts/admin/header.jsp" %>   
          <!-- TOP Nav Bar END -->
-         <!-- Page Content  -->
-         <decorator:body />	
+      </div>
+      <decorator:body />	
       <!-- Wrapper END -->
       <!-- Footer -->
       <%@include file="/WEB-INF/views/layouts/admin/footer.jsp" %>
       <!-- Footer END -->
+   
+        
+    
       <!-- color-customizer -->
    
       <!-- color-customizer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="<c:url value = "/assets/user/js/jquery.min.js"/>"> </script>
+       <script src="<c:url value = "/assets/user/js/jquery.min.js"/>"></script>
       <script src="<c:url value = "/assets/user/js/popper.min.js"/>"></script>
       <script src="<c:url value = "/assets/user/js/bootstrap.min.js"/>"></script>
       <!-- Appear JavaScript -->
@@ -93,4 +91,6 @@
       <script src="<c:url value = "/assets/user/js/chart-custom.js"/>"></script>
       <!-- Custom JavaScript -->
       <script src="<c:url value = "/assets/user/js/custom.js"/>"></script>
+      <script src="<c:url value = "/assets/user/js/script.js"/>"></script> <!-- Liên kết đến tệp JavaScript -->
    </body>
+</html>

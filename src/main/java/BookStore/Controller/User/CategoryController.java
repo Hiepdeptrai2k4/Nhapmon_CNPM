@@ -21,7 +21,7 @@ public class CategoryController extends BaseController{
 	public ModelAndView Index(@PathVariable int id,HttpSession session, Model model) {
 		//ModelAndView mv= new ModelAndView("user/index");
 		loadCart(session,model);
-		
+		loadBill(session,model);
 		_mvShare.addObject("listbook",categoryServiceImpl.GetDataBookCategory(id));
 		//_mvShare.addObject("products",_homeService.GetDataProducts());
 		_mvShare.setViewName("user/category");

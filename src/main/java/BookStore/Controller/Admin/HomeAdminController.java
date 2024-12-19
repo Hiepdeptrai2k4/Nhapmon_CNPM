@@ -15,4 +15,20 @@ public class HomeAdminController extends BaseAdminController{
 		_mvShare.setViewName("admin/index");
 		return _mvShare;
 	}
+	
+	@RequestMapping(value = {"/admin/dashboard"})
+	public ModelAndView Dashboard() {
+		ModelAndView mv= new ModelAndView("admin/dashboard");
+		
+		return mv;
+	}
+	
+	
+
+	@RequestMapping(value = {"/admin/admin-books"})
+	public ModelAndView Books() {
+		ModelAndView mv= new ModelAndView("admin/books");
+		mv.addObject("bigBook", _homeService.GetDataBigBook());
+		return mv;
+	}
 }

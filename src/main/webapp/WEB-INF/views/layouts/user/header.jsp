@@ -90,7 +90,7 @@
                               <div class="iq-card shadow-none m-0">
                                  <div class="iq-card-body p-0">
                                     <div class="bg-primary p-3">
-                                       <h5 class="mb-0 text-white">Thông Báo<small class="badge  badge-light float-right pt-1">4</small></h5>
+                                       <h5 class="mb-0 text-white">Thông Báo<small class="badge  badge-light float-right pt-1">${ bill.size() }</small></h5>
                                     </div>
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
