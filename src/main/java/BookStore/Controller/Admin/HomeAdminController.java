@@ -5,23 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeAdminController extends BaseAdminController{
-	@RequestMapping(value = {"/admin", "/index"})
+	
+	
+	@RequestMapping(value = {"/admin", "/index", "/admin/dashboard"})
 	public ModelAndView Index() {
-		//ModelAndView mv= new ModelAndView("user/index");
-		
-		
-		//_mvShare.addObject("categorys",_homeService.GetDataCategorys());
 		//_mvShare.addObject("products",_homeService.GetDataProducts());
+		_mvShare.addObject("bigBook", _homeService.GetDataBigBook());
+		_mvShare.addObject("profile", profilesSevice.GetDataProfiles());
+		_mvShare.addObject("cartItem", cartItemsService.GetDataCartItems());
+		_mvShare.addObject("bills", billsService.GetDataAllBill());
 		_mvShare.setViewName("admin/index");
 		return _mvShare;
 	}
 	
-	@RequestMapping(value = {"/admin/dashboard"})
-	public ModelAndView Dashboard() {
-		ModelAndView mv= new ModelAndView("admin/dashboard");
-		
-		return mv;
-	}
 	
 	
 
