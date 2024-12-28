@@ -92,54 +92,28 @@
                                     <div class="bg-primary p-3">
                                        <h5 class="mb-0 text-white">Thông Báo<small class="badge  badge-light float-right pt-1">${ bill.size() }</small></h5>
                                     </div>
-                                    <a href="#" class="iq-sub-card" >
+                                    <c:forEach var="item" items="${bill}">
+                                    <a href="/BookStore/bill/${item.billID }" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
                                              <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/1.jpg"/>" alt="">
                                           </div>
                                           <div class="media-body ml-3">
+                                          	<c:if test="${item.state == 1}">
+                                             <h6 class="mb-0 ">Đơn hàng chờ xác nhận</h6>
+                                            </c:if>
+                                            <c:if test="${item.state == 2}">
+                                             <h6 class="mb-0 ">Đơn hàng đang giao</h6>
+                                            </c:if>
+                                            <c:if test="${item.state == 3}">
                                              <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
-                                             <small class="float-right font-size-12">Just Now</small>
-                                             <p class="mb-0">95.000đ</p>
+                                            </c:if>
+                                             <small class="float-right font-size-12">${ item.time }</small>
+                                             <p class="mb-0"><fmt:formatNumber value="${ item.total }" type="number" groupingUsed="true" pattern="#,##0" /> ₫</p>
                                           </div>
                                        </div>
                                     </a>
-                                    <a href="#" class="iq-sub-card" >
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/02.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
-                                             <small class="float-right font-size-12">5 days ago</small>
-                                             <p class="mb-0">255.000đ</p>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card" >
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/03.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Đơn hàng giao thành công</h6>
-                                             <small class="float-right font-size-12">2 days ago</small>
-                                             <p class="mb-0">79.000đ</p>
-                                          </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="iq-sub-card" >
-                                       <div class="media align-items-center">
-                                          <div class="">
-                                             <img class="avatar-40 rounded" src="<c:url value = "/assets/user/images/user/04.jpg"/>" alt="">
-                                          </div>
-                                          <div class="media-body ml-3">
-                                             <h6 class="mb-0 ">Đơn hàng #7979 giao không thành công</h6>
-                                             <small class="float-right font-size-12">3 days ago</small>
-                                             <p class="mb-0">100.000đ</p>
-                                          </div>
-                                       </div>
-                                    </a>
+                                    </c:forEach>
                                  </div>
                               </div>
                            </div>

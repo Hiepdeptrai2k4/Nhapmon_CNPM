@@ -44,4 +44,26 @@ public class AccountServiceImpl implements IAccountService {
 		
 	}
 
+	@Override
+	public Users EditPass(Users user, String newPass) {
+		user.setPasswordHash(BCrypt.hashpw(newPass, BCrypt.gensalt(12)));
+		int checkEditPass = userDao.EditPass(user);
+		if(checkEditPass==0) return null;
+		else {
+		Users newUser = userDao.GetUserByAcc(user);
+		return newUser;
+		}
+	}
+
+	@Override
+	public Users EditUser(Users user) {
+		int checkEditUser=  userDao.EditUser(user);
+		if(checkEditUser==0) return null;
+		else 
+		{
+			Users newUser = userDao.GetUserByAcc(user);
+			return newUser;
+		}
+	}
+
 }

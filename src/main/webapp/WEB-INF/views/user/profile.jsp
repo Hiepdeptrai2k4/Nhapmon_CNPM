@@ -15,7 +15,7 @@
                               <div class="cover-container text-center">
                                  <img src="images/user/1.jpg" alt="profile-bg" class="rounded-circle img-fluid">
                                  <div class="profile-detail mt-3">
-                                    <h3>Barry Tech</h3>
+                                    <h3>${profile.firstName } ${profile.lastName }</h3>
                                     <p class="text-primary">Web designer</p>
                                     <p>Phasellus faucibus mollis pharetra. Proin blandit ac massa.Morbi nulla dolor, ornare at commodo non, feugiat non nisi.</p>
                                  </div>
@@ -50,20 +50,31 @@
                               <li>
                                  <div class="row align-items-center justify-content-between mb-3">
                                     <div class="col-sm-6">
-                                       <h6>Birthday</h6>                                       
+                                       <h6>Năm sinh</h6>                                       
                                     </div>
                                     <div class="col-sm-6">
-                                       <p class="mb-0">3rd March</p>                                       
+                                       <p class="mb-0">${profile.year }</p>                                       
                                     </div>
                                  </div>
                               </li>
                               <li>
                                  <div class="row align-items-center justify-content-between mb-3">
                                     <div class="col-sm-6">
+                                       <h6>Tháng sinh</h6>                                       
+                                    </div>
+                                    <div class="col-sm-6">
+                                       <p class="mb-0">${profile.month }</p>                                       
+                                    </div>
+                                 </div>
+                              </li>
+                              
+                              <li>
+                                 <div class="row align-items-center justify-content-between mb-3">
+                                    <div class="col-sm-6">
                                        <h6>Address</h6>                                       
                                     </div>
                                     <div class="col-sm-6">
-                                       <p class="mb-0">Landon</p>                                       
+                                       <p class="mb-0">${ LoginInfo.address }</p>                                       
                                     </div>
                                  </div>
                               </li>
@@ -73,7 +84,7 @@
                                        <h6>Phone</h6>                                       
                                     </div>
                                     <div class="col-sm-6">
-                                       <p class="mb-0">(010)987 543 201</p>                                       
+                                       <p class="mb-0">${LoginInfo.userID }</p>                                       
                                     </div>
                                  </div>
                               </li>

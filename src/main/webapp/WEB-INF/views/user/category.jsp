@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <body>
 <!-- Page Content  -->
          <div id="content-page" class="content-page">
@@ -12,83 +13,60 @@
                         <div class="d-block text-center">
                            <h2 class="mb-3">Search by Book Name</h2>    
                            <div class="w-100 iq-search-filter">
-                              <ul class="list-inline p-0 m-0 row justify-content-center search-menu-options">
+                           
+                           
+                           		
+                                 
+                                 
+                              <form:form action="/BookStore/search" method="POST" modelAttribute="searchInfo" class="list-inline p-0 m-0 row justify-content-center search-menu-options">
+                                 
                                  <li class="search-menu-opt">
                                     <div class="iq-dropdown">
                                        <div class="form-group mb-0">
-                                          <select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect1">
-                                             <option selected="">All</option>
-                                             <option>A Books</option>
-                                             <option>the Sun</option>
-                                             <option>Harsh book</option>
-                                             <option>People book</option>
-                                             <option>the Fog</option>
-                                          </select>
+                                          	<form:select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect2" path="genres">
+                                             <form:option value="" label="Genres" />
+                                             <c:forEach var="item" items="${ genre }" varStatus="loop">
+                                             <form:option value="${item.genreID}" label="${item.genreName}"/> 
+                                             </c:forEach>
+                                             
+                                          </form:select>
                                        </div>
                                     </div>
                                  </li>
+                                 
                                  <li class="search-menu-opt">
                                     <div class="iq-dropdown">
                                        <div class="form-group mb-0">
-                                          <select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect2">
-                                             <option selected="">Genres</option>
-                                             <option>General</option>
-                                             <option>History</option>
-                                             <option>Horror</option>
-                                             <option>Fantasy</option>
-                                             <option>Literary</option>
-                                             <option>Manga</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li class="search-menu-opt">
-                                    <div class="iq-dropdown">
-                                       <div class="form-group mb-0">
-                                          <select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect3">
-                                             <option selected="">Year</option>
-                                             <option>2015</option>
-                                             <option>2016</option>
-                                             <option>2017</option>
-                                             <option>2018</option>
-                                             <option>2019</option>
-                                             <option>2020</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li class="search-menu-opt">
-                                    <div class="iq-dropdown">
-                                       <div class="form-group mb-0">
-                                          <select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect4">
-                                             <option selected="">Author</option>
-                                             <option>Milesiy Yor</option>
-                                             <option>Ira Membrit</option>
-                                             <option>Anna Mull</option>
-                                             <option>John Smith</option>
-                                             <option>David King</option>
-                                             <option>Kusti Franti</option>
-                                          </select>
+                                          <form:select class="form-control form-search-control bg-white border-0" id="exampleFormControlSelect4" path="author">
+                                             <form:option value="" label="Author" />
+                                             <c:forEach var="item" items="${ authors }" varStatus="loop">
+                                             <form:option value="${item.authorID}" label="${item.authorName}"/> 
+                                             </c:forEach>
+                                             
+                                          </form:select>
                                        </div>
                                     </div>
                                  </li>
                                  <li class="search-menu-opt">
                                     <div class="iq-search-bar search-book d-flex align-items-center">
-                                       <form action="#" class="searchbox">
-                                          <input type="text" class="text search-input" placeholder="search here...">
+                                       <div class="searchbox">
+                                          <form:input type="text" class="text search-input" placeholder="search here..." path="bar"/>
                                           <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                                       </form>
+                                       </div>
                                        <button type="submit" class="btn btn-primary search-data ml-2">Search</button>
                                     </div>
                                  </li>
-                              </ul>
+                              </form:form>
                            </div> 
                         </div>
                      </div>
                      <div class="iq-card">
                         <div class="iq-card-body">
                            <div class="row">
-                              <c:forEach var="item" items="${ listbook }" varStatus="loop">
+								<c:if test="${empty listbook}">
+									<h2>Không có kết quả phù hợp</h1>
+								</c:if>
+								<c:forEach var="item" items="${ listbook }" varStatus="loop">
 									<div class="col-sm-6 col-md-4 col-lg-3">
 										<div
 											class="iq-card iq-card-block iq-card-stretch iq-card-height search-bookcontent">
@@ -573,103 +551,103 @@
                      <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                         <div class="iq-card-header d-flex justify-content-between align-items-center position-relative">
                            <div class="iq-header-title">
-                              <h4 class="card-title mb-0">Favorite Reads</h4>
+                              <h4 class="card-title mb-0">Sách yêu thích</h4>
                            </div>
                            <div class="iq-card-header-toolbar d-flex align-items-center">
-                              <a href="category.html" class="btn btn-sm btn-primary view-more">View More</a>
+                              <a href="/BookStore/category/3" class="btn btn-sm btn-primary view-more">Xem thêm</a>
                            </div>
                         </div>                         
                         <div class="iq-card-body favorites-contens">
                            <ul id="favorites-slider" class="list-inline p-0 mb-0 row">
-                              <li class="col-md-3">
-                                 <div class="d-flex justify-content-between align-items-center">
+                              <li class="col-md-4">
+                                 <div class="d-flex align-items-center">
                                     <div class="col-5 p-0 position-relative">
                                        <a href="javascript:void();">
-                                          <img src="images/favorite/05.jpg" class="img-fluid rounded w-100" alt="">
+                                          <img src="<c:url value = "/assets/user/images/favorite/01.jpg"/>" class="img-fluid rounded w-100" alt="">
                                        </a>                                
                                     </div>
                                     <div class="col-7">
-                                       <h5 class="mb-2">Every Book is a new Wonderful Travel..</h5>
-                                       <p class="mb-2">Author : Pedro Araez</p>                                          
+                                       <h5 class="mb-2">D. Trump - Nghệ Thuật Đàm Phán</h5>
+                                       <p class="mb-2">Tác giả : Pedro Araez</p>                                          
                                        <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Reading</span>
-                                          <span class="mr-4">78%</span>
+                                          <span>Đã bán</span>
+                                          <span class="mr-4">69</span>
                                        </div>
                                        <div class="iq-progress-bar-linear d-inline-block w-100">
                                           <div class="iq-progress-bar iq-bg-primary">
-                                             <span class="bg-primary" data-percent="78"></span>
+                                             <span class="bg-primary" data-percent="65"></span>
                                           </div>
                                        </div>
-                                       <a href="#" class="text-dark">Read Now<i class="ri-arrow-right-s-line"></i></a>
+                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
                                     </div>
                                  </div>
                               </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex justify-content-between align-items-center">
+                              <li class="col-md-4">
+                                 <div class="d-flex align-items-center">
                                     <div class="col-5 p-0 position-relative">
                                        <a href="javascript:void();">
-                                          <img src="images/favorite/06.jpg" class="img-fluid rounded w-100" alt="">
+                                          <img src="<c:url value = "/assets/user/images/favorite/02.jpg"/>" class="img-fluid rounded w-100" alt="">
                                        </a>                                
                                     </div>
                                     <div class="col-7">
-                                       <h5 class="mb-2">Casey Christie night book into find...</h5>
-                                       <p class="mb-2">Author : Michael klock</p>                                          
+                                       <h5 class="mb-2">Một Đời Quản Trị</h5>
+                                       <p class="mb-2">Tác giả : Michael klock</p>                                          
                                        <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Reading</span>
-                                          <span class="mr-4">78%</span>
+                                          <span>Đã bán</span>
+                                          <span class="mr-4">450</span>
                                        </div>
                                        <div class="iq-progress-bar-linear d-inline-block w-100">
                                           <div class="iq-progress-bar iq-bg-danger">
-                                             <span class="bg-danger" data-percent="78"></span>
+                                             <span class="bg-danger" data-percent="45"></span>
                                           </div>
                                        </div>
-                                       <a href="#" class="text-dark">Read Now<i class="ri-arrow-right-s-line"></i></a>
+                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
                                     </div>
                                  </div>
                               </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex justify-content-between align-items-center">
+                              <li class="col-md-4">
+                                 <div class="d-flex align-items-center">
                                     <div class="col-5 p-0 position-relative">
                                        <a href="javascript:void();">
-                                          <img src="images/favorite/07.jpg" class="img-fluid rounded w-100" alt="">
+                                          <img src="<c:url value = "/assets/user/images/favorite/03.jpg"/>" class="img-fluid rounded w-100" alt="">
                                        </a>                                
                                     </div>
                                     <div class="col-7">
-                                       <h5 class="mb-2">The Secret to English Busy People..</h5>
-                                       <p class="mb-2">Author : Daniel Ace</p>                                          
+                                       <h5 class="mb-2">Người Bán Hàng Vĩ Đại Nhất Thế Giới</h5>
+                                       <p class="mb-2">Tác giả : Daniel Ace</p>                                          
                                        <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Reading</span>
-                                          <span class="mr-4">78%</span>
+                                          <span>Đã bán</span>
+                                          <span class="mr-4">79</span>
                                        </div>
                                        <div class="iq-progress-bar-linear d-inline-block w-100">
                                           <div class="iq-progress-bar iq-bg-info">
                                              <span class="bg-info" data-percent="78"></span>
                                           </div>
                                        </div>
-                                       <a href="#" class="text-dark">Read Now<i class="ri-arrow-right-s-line"></i></a>
+                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
                                     </div>
                                  </div>
                               </li>
-                              <li class="col-md-3">
-                                 <div class="d-flex justify-content-between align-items-center">
+                              <li class="col-md-4">
+                                 <div class="d-flex align-items-center">
                                     <div class="col-5 p-0 position-relative">
                                        <a href="javascript:void();">
-                                          <img src="images/favorite/08.jpg" class="img-fluid rounded w-100" alt="">
+                                          <img src="<c:url value = "/assets/user/images/favorite/04.jpg"/>" class="img-fluid rounded w-100" alt="">
                                        </a>                                
                                     </div>
                                     <div class="col-7">
-                                       <h5 class="mb-2">The adventures of Robins books...</h5>
-                                       <p class="mb-2">Author : Luka Afton</p>                                          
+                                       <h5 class="mb-2">Economix- Các Nền Kinh Tế Vận Hành</h5>
+                                       <p class="mb-2">Tác giả : Luka Afton</p>                                          
                                        <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Reading</span>
-                                          <span class="mr-4">78%</span>
+                                          <span>Đã bán</span>
+                                          <span class="mr-4">900</span>
                                        </div>
                                        <div class="iq-progress-bar-linear d-inline-block w-100">
                                           <div class="iq-progress-bar iq-bg-success">
-                                             <span class="bg-success" data-percent="78"></span>
+                                             <span class="bg-success" data-percent="90"></span>
                                           </div>
                                        </div>
-                                       <a href="#" class="text-dark">Read Now<i class="ri-arrow-right-s-line"></i></a>
+                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
                                     </div>
                                  </div>
                               </li>

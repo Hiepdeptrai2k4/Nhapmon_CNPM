@@ -29,6 +29,30 @@ public class UsersDao extends BaseDao {
 		int insert= _jdbcTemplate.update(sql.toString());
 		return insert;
 	}
+	
+	public int EditUser(Users user) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("UPDATE ");
+		sql.append("users ");
+		
+		sql.append("SET ");
+		sql.append("Phone= '"+user.getPhone()+"', ");
+		sql.append("Address= '"+user.getAddress()+"' ");
+		sql.append("WHERE UserID = "+user.getUserID()+" ");
+		int insert= _jdbcTemplate.update(sql.toString());
+		return insert;
+	}
+	public int EditPass(Users user) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("UPDATE ");
+		sql.append("users ");
+		
+		sql.append("SET ");
+		sql.append("PasswordHash= '"+user.getPasswordHash()+"' ");
+		sql.append("WHERE UserID = "+user.getUserID()+" ");
+		int insert= _jdbcTemplate.update(sql.toString());
+		return insert;
+	}
 	public Users GetUserByAcc(Users user) {
 		String sql = "SELECT * FROM users WHERE Username='"+user.getUsername()+"'";
 		List<Users> result = new ArrayList<Users>();

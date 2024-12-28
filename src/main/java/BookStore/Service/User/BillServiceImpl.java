@@ -2,15 +2,19 @@ package BookStore.Service.User;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import BookStore.Dao.BillDetailsDao;
 import BookStore.Dao.BillsDao;
+import BookStore.Dao.BooksDao;
 import BookStore.Dao.CartItemsDao;
+import BookStore.Entity.BigBillDetails;
 import BookStore.Entity.BillDetails;
 import BookStore.Entity.Bills;
 import BookStore.Entity.CartItems;
@@ -26,7 +30,8 @@ public class BillServiceImpl implements IBillService{
 	CartItemsDao cartItemsDao;
 	@Autowired
 	CartServiceImpl cartService;
-	
+	@Autowired
+	BooksDao booksDao;
 	
 	@Override
 	public HashMap<Integer, CartItems> addBills(Users user, Bills bill, HashMap<Integer, CartItems> cart) {
@@ -65,6 +70,31 @@ public class BillServiceImpl implements IBillService{
 	public List<BillDetails> getBillDetails(int billID) {
 		
 		return billDetailDao.GetDataBill(billID);
+	}
+
+
+	@Override
+	public List<BigBillDetails> getBigBillDetails(int billID) {
+		List<BillDetails> billDetail= billDetailDao.GetDataBill(billID);
+		List<BigBillDetails> bigBillDetail = new ArrayList<BigBillDetails>();
+		for (BillDetails item : billDetail) {
+			BigBillDetails newBigbillDetail = new BigBillDetails();
+			newBigbillDetail.setBillID(item.getBillID());
+			newBigbillDetail.setBookID(item.getBookID());
+			newBigbillDetail.setQuantity(item.getQuantity());
+			newBigbillDetail.setBook(booksDao.GetDataBookById(item.getBookID()));
+			bigBillDetail.add(newBigbillDetail);
+        }
+		return bigBillDetail;
+	}
+
+
+	@Override
+	public Bills getBill(List<Bills> bills,int billID) {
+		for (Bills item : bills) {
+			if(item.getBillID()==billID) return item;
+		}
+		return null;
 	}
 	
 }

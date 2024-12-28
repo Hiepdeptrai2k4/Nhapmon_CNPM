@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import BookStore.Entity.BigBillDetails;
 import BookStore.Entity.BillDetails;
 import BookStore.Entity.Bills;
 import BookStore.Entity.CartItems;
@@ -18,5 +19,8 @@ public interface IBillService {
 	public List<Bills> getBills(Users user);
 	@Autowired
 	public List<BillDetails> getBillDetails(int billID);
-
+	@Autowired
+	public List<BigBillDetails> getBigBillDetails (int billID);
+	@Autowired
+	public Bills getBill (List<Bills> bills,int billID);
 }

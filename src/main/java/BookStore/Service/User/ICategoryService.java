@@ -11,4 +11,5 @@ import BookStore.Entity.Books;
 public interface ICategoryService {
 	@Autowired
 	public List<Books> GetDataBookCategory(int id);
+	public List<Books> searchBooks(String title, String author, String genre);
 }

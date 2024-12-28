@@ -19,4 +19,10 @@ public class CategoryServiceImpl implements ICategoryService {
 		return booksDao.GetDataBookCategory(id);
 	}
 
+	@Override
+	public List<Books> searchBooks(String title, String author, String genre) {
+		
+		return booksDao.searchBooks(title, author, genre);
+	}
+
 }

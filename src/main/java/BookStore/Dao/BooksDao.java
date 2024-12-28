@@ -107,5 +107,28 @@ public class BooksDao extends BaseDao {
 		int insert = _jdbcTemplate.update(sql.toString());
 		return insert;
 	};
+	public List<Books> searchBooks(String title, String author, String genre) {
+	    List<Books> list = new ArrayList<>();
+	    StringBuffer sql = new StringBuffer();
+	    
+	
+	    sql.append("SELECT * FROM books WHERE 1=1 ");
+	    
+	    
+	    if (title != null && !title.trim().isEmpty()) {
+	        sql.append("AND Title LIKE '%" + title + "%' ");
+	    }
+	    if (author != null && !author.isEmpty()) {
+	        sql.append("AND AuthorID = '" + author + "' ");
+	    }
+	    if (genre != null && !genre.isEmpty()) {
+	        sql.append("AND GenreID = '" + genre + "' ");
+	    }
+	    
+
+	    
+	    list = _jdbcTemplate.query(sql.toString(), new MapperBooks());
+	    return list;
+	}
 	
 }

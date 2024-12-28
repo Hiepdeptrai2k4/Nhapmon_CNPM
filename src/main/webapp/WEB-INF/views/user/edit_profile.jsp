@@ -22,11 +22,7 @@
                                     Đổi mật khẩu
                                  </a>
                               </li>
-                              <li class="col-md-3 p-0">
-                                 <a class="nav-link" data-toggle="pill" href="#emailandsms">
-                                    Email và SMS
-                                 </a>
-                              </li>
+                              
                               <li class="col-md-3 p-0">
                                  <a class="nav-link" data-toggle="pill" href="#manage-contact">
                                     Quản lý liên hệ
@@ -98,6 +94,7 @@
                            </div>
                         </div>
                         <div class="tab-pane fade" id="chang-pwd" role="tabpanel">
+                        	<h2> ${ statusChangePass }</h2>
                            <div class="iq-card">
                               <div class="iq-card-header d-flex justify-content-between">
                                  <div class="iq-header-title">
@@ -105,90 +102,29 @@
                                  </div>
                               </div>
                               <div class="iq-card-body">
-                                 <form>
+                                 <form:form action="editpass" method="POST" modelAttribute="passEditForm">
                                     <div class="form-group">
                                        <label for="cpass">Mật khẩu hiện tại:</label>
                                        <a href="javascripe:void();" class="float-right">Quên mật khẩu</a>
-                                       <input type="Password" class="form-control" id="cpass" value="">
+                                       <form:input type="Password" class="form-control" id="cpass" value="" path="currPass"/>
                                     </div>
                                     <div class="form-group">
                                        <label for="npass">Mật khẩu mới:</label>
-                                       <input type="Password" class="form-control" id="npass" value="">
+                                       <form:input type="Password" class="form-control" id="npass" value="" path="newPass"/>
                                     </div>
                                     <div class="form-group">
                                        <label for="vpass">Xác nhận lại mật khẩu:</label>
-                                       <input type="Password" class="form-control" id="vpass" value="">
+                                       <form:input type="Password" class="form-control" id="vpass" value="" path="newPass2"/>
                                     </div>
                                     <button type="submit" class="btn btn-primary mr-2">Gửi</button>
                                     <button type="reset" class="btn iq-bg-danger">Hủy bỏ</button>
-                                 </form>
+                                 </form:form>
                               </div>
                            </div>
                         </div>
-                        <div class="tab-pane fade" id="emailandsms" role="tabpanel">
-                           <div class="iq-card">
-                              <div class="iq-card-header d-flex justify-content-between">
-                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Email và SMS</h4>
-                                 </div>
-                              </div>
-                              <div class="iq-card-body">
-                                 <form>
-                                    <div class="form-group row align-items-center">
-                                       <label class="col-8 col-md-3" for="emailnotification">Thông báo tới Email :</label>
-                                       <div class="col-4 col-md-9 custom-control custom-switch">
-                                          <input type="checkbox" class="custom-control-input" id="emailnotification" checked="">
-                                          <label class="custom-control-label" for="emailnotification"></label>
-                                       </div>
-                                    </div>
-                                    <div class="form-group row align-items-center">
-                                       <label class="col-8 col-md-3" for="smsnotification">Thông báo tới SMS:</label>
-                                       <div class="col-4 col-md-9 custom-control custom-switch">
-                                          <input type="checkbox" class="custom-control-input" id="smsnotification" checked="">
-                                          <label class="custom-control-label" for="smsnotification"></label>
-                                       </div>
-                                    </div>
-                                    <div class="form-group row align-items-center">
-                                       <label class="col-md-3" for="npass">Khi nào gửi Email</label>
-                                       <div class="col-md-9">
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email01">
-                                             <label class="custom-control-label" for="email01">Bạn có thông báo mới.</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email02">
-                                             <label class="custom-control-label" for="email02">Bạn đã gửi một tin nhắn trực tiếp</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email03" checked="">
-                                             <label class="custom-control-label" for="email03">Ai đó thêm bạn làm kết nối</label>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="form-group row align-items-center">
-                                       <label class="col-md-3" for="npass">Khi nào cần báo email</label>
-                                       <div class="col-md-9">
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email04">
-                                             <label class="custom-control-label" for="email04"> Theo đơn đặt hàng mới.</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email05">
-                                             <label class="custom-control-label" for="email05"> Phê duyệt thành viên mới</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox">
-                                             <input type="checkbox" class="custom-control-input" id="email06" checked="">
-                                             <label class="custom-control-label" for="email06"> Đăng ký thành viên</label>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Gửi</button>
-                                    <button type="reset" class="btn iq-bg-danger">Hủy bỏ</button>
-                                 </form>
-                              </div>
-                           </div>
-                        </div>
+                        
                         <div class="tab-pane fade" id="manage-contact" role="tabpanel">
+                        	<h2> ${ statusChangeU }</h2>
                            <div class="iq-card">
                               <div class="iq-card-header d-flex justify-content-between">
                                  <div class="iq-header-title">
@@ -196,22 +132,19 @@
                                  </div>
                               </div>
                               <div class="iq-card-body">
-                                 <form>
+                                 <form:form action="edituser" method="POST" modelAttribute="userEditForm">
                                     <div class="form-group">
                                        <label for="cno">Số liên lạc:</label>
-                                       <input type="text" class="form-control" id="cno" value="089">
+                                       <form:input type="text" class="form-control" id="cno" value="${LoginInfo.phone }" path="phone"/>
                                     </div>
+                                    
                                     <div class="form-group">
-                                       <label for="email">Email:</label>
-                                       <input type="text" class="form-control" id="email" value="tvtean@ttnm.com">
-                                    </div>
-                                    <div class="form-group">
-                                       <label for="url">Url:</label>
-                                       <input type="text" class="form-control" id="url" value="https://nhasachtv.com">
+                                       <label for="url">Địa chỉ:</label>
+                                       <form:input type="text" class="form-control" id="cno" value="${LoginInfo.address }" path="address"/>
                                     </div>
                                     <button type="submit" class="btn btn-primary mr-2">Gửi</button>
                                     <button type="reset" class="btn iq-bg-danger">Hủy bỏ</button>
-                                 </form>
+                                 </form:form>
                               </div>
                            </div>
                         </div>
