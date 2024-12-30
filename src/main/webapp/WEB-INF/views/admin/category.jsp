@@ -42,8 +42,8 @@
                                         </td>
                                         <td>
                                            <div class="flex align-items-center list-user-action">
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sửa" href="admin-add-category.html"><i class="ri-pencil-line"></i></a>
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xoá" href="#"><i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sửa" href="/BookStore/admin/sua-danh-muc/${item.genreID}"><i class="ri-pencil-line"></i></a>
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xoá" href="/BookStore/admin/admin-category/delete/${item.genreID}"><i class="ri-delete-bin-line"></i></a>
                                           </div>
                                         </td>
                                     </tr>

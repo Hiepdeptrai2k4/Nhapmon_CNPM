@@ -90,7 +90,7 @@
 											placeholder="Mời nhập Description" path="Description" />
 									</div>
 									<button type="submit" class="btn btn-primary">Gửi</button>
-									<button type="reset" class="btn btn-danger">Trở lại</button>
+									<a href="/BookStore/admin/admin-books" class="btn btn-danger">Trở lại</a>
 								</form:form>
 							</div>
 						</div>

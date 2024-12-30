@@ -47,7 +47,7 @@
                                   <form:input type="text" class="form-control" rows="4" placeholder="Mời nhập Information" path="Information" />  
                               </div>
                               <button type="submit" class="btn btn-primary">Gửi</button>
-                              <button type="reset" class="btn btn-danger">Trở lại</button>
+                              <a href="/BookStore/admin/admin-author" class="btn btn-danger">Trở lại</a>
                            </form:form>
                         </div>
                      </div>

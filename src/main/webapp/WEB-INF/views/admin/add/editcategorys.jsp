@@ -1,17 +1,16 @@
-
- <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!doctype html>
 <html lang="en">
-  
+ 
    <body>
-    <!-- TOP Nav Bar -->
-		
-	
+     
+         <!-- TOP Nav Bar -->
+         
          <!-- TOP Nav Bar END -->
          <!-- Page Content  -->
          <div id="content-page" class="content-page">
@@ -21,33 +20,21 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title">Thêm tác giả</h4>
+                              <h4 class="card-title">Sửa danh mục</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
-                            <form:form action="them-tac-gia" method = "POST" modelAttribute="author">  
+                           <form:form action="/BookStore/admin/sua-danh-muc/${category.genreID }" accept-charset="UTF-8" method = "POST" modelAttribute="category">  
                               <div class="form-group">
-                                 <label>Tên tác giả:</label>
-                                <form:input type="text" class="form-control"  placeholder="Mời nhập tên tác giả" path="AuthorName" />  
-                              </div>
-                              <div class="form-group">
-                                 <label>Hồ sơ tác giả:</label>
-                                 <div class="custom-file">
-                                   
-                                       <form:input type="file" class="custom-file-input" accept="image/png, image/jpeg" path="AuthorImg" />  
-                                    <label class="custom-file-label" for="customFile">Chọn tập tin</label>
-                                 </div>
-                              </div>
-                              <div class="form-group">
-                                 <label>Email tác giả:</label>
-                                 <input type="email" class="form-control">
+                                 <label>Tên danh mục:</label>
+                                  <form:input type="text" class="form-control"  placeholder="Mời nhập tên danh mục" path="GenreName" />  
                               </div>
                               <div class="form-group">
                                  <label>Nội dung:</label>
-                                  <form:input type="text" class="form-control" rows="4" placeholder="Mời nhập Information" path="Information" />  
+                                <form:input type="text" class="form-control" rows="4" placeholder="Mời nhập Description" path="Description" />  
                               </div>
                               <button type="submit" class="btn btn-primary">Gửi</button>
-                              <a href="/BookStore/admin/admin-author" class="btn btn-danger">Trở lại</a>
+                              <a href="/BookStore/admin/admin-category" class="btn btn-danger">Trở lại</a>
                            </form:form>
                         </div>
                      </div>
@@ -73,7 +60,7 @@
       </footer>
       <!-- Footer END -->
       <!-- color-customizer -->
-    
+   
       <!-- color-customizer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

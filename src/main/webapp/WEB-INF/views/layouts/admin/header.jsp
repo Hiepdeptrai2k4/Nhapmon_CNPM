@@ -42,9 +42,7 @@
                <div id="sidebar-bottom" class="p-3 position-relative">
                   <div class="iq-card">
                      <div class="iq-card-body">
-                        <div class="sidebarbottom-content">
-                           <button type="submit" class="btn w-100 btn-primary mt-4 view-more">NhasachTV</button>
-                        </div>
+                        
                      </div>
                   </div>
                </div>
