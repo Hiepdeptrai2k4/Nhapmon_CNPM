@@ -96,5 +96,19 @@ public class BillServiceImpl implements IBillService{
 		}
 		return null;
 	}
+	@Override
+	public List<Bills> GetDataAllBill() {
+		return billsDao.GetDataAllBill();
+	}
+
+	@Override
+	public int ConfirmBill(Bills bill) {
+		return billsDao.ConfirmBill(bill);
+	}
+
+	@Override
+	public Bills GetDataBillByID(int id) {
+		return billsDao.GetDataBillByID(id);
+	}
 	
 }

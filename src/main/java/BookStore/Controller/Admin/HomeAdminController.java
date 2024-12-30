@@ -27,6 +27,10 @@ public class HomeAdminController extends BaseAdminController{
 		}
 		//_mvShare.addObject("categorys",_homeService.GetDataCategorys());
 		//_mvShare.addObject("products",_homeService.GetDataProducts());
+		_mvShare.addObject("bigBook", _homeService.GetDataBigBook());
+		_mvShare.addObject("profile", profilesSevice.GetDataProfiles());
+		_mvShare.addObject("cartItem", cartItemsService.GetDataCartItems());
+		_mvShare.addObject("bills", billsService.GetDataAllBill());
 		_mvShare.setViewName("admin/index");
 		return _mvShare;
 	}

@@ -104,4 +104,11 @@ public class CartItemsDao extends BaseDao {
 		int insert= _jdbcTemplate.update(sql.toString());
 		return insert;
 	}
+	public List<CartItems> GetDataCartItems(){
+		List<CartItems> list = new ArrayList<CartItems>();
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select * from cartitems ");
+		list = _jdbcTemplate.query(sql.toString(), new MapperCartItems());
+		return list;
+	}
 }

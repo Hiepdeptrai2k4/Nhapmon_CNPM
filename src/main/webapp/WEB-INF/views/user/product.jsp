@@ -110,8 +110,8 @@
                                        <span class="text-dark mb-4 pb-4 iq-border-bottom d-block">${ book.description }</span>
                                        <div class="text-primary mb-4">Tác giả: <span class="text-body">HappyLive</span></div>
                                        <div class="mb-4 d-flex align-items-center">                                       
-                                          <a href="checkout.html" class="btn btn-primary view-more mr-2">Thêm vào giỏ hàng</a>
-                                          <a href="book-pdf.html" class="btn btn-primary view-more mr-2">Mua ngay</a>
+                                          <a href="javascript:void();" class="btn btn-primary view-more mr-2" onclick="addCart(${book.bookID});">Thêm vào giỏ hàng</a>
+                                          
                                        </div>
                                        <div class="mb-3">
                                           <a href="#" class="text-body text-center"><span class="avatar-30 rounded-circle bg-primary d-inline-block mr-2"><i class="ri-heart-fill"></i></span><span>Thêm vào danh sách yêu thích</span></a>
@@ -171,7 +171,7 @@
 											<div class="col-7 pl-0">
 												<h6 class="mb-2">${ item.title }</h6>
 												<p class="text-body">${ item.year }</p>
-												<a href="#" class="text-dark" tabindex="-1">Đọc ngay<i
+												<a href="${ item.bookID }" class="text-dark" tabindex="-1">Mua ngay<i
 													class="ri-arrow-right-s-line"></i></a>
 											</div>
 										</div>
@@ -193,7 +193,7 @@
                               <h4 class="card-title mb-0">Thịnh hành</h4>
                            </div>
                            <div class="iq-card-header-toolbar d-flex align-items-center">
-                              <a href="category.html" class="btn btn-sm btn-primary view-more">Xem thêm</a>
+                              <a href="/BookStore/category/3" class="btn btn-sm btn-primary view-more">Xem thêm</a>
                            </div>
                         </div>
                         <div class="iq-card-body trendy-contens">
@@ -238,108 +238,50 @@
                   </div>
                   <div class="col-lg-12">
                      <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                        <div class="iq-card-header d-flex justify-content-between align-items-center position-relative">
+                        <div class="iq-card-header d-flex justify-content-between align-items-center position-relative mb-0 similar-detail">
                            <div class="iq-header-title">
-                              <h4 class="card-title mb-0">Sách yêu thích</h4>
+                              <h4 class="card-title mb-0">Có thể bạn sẽ thích</h4>
                            </div>
                            <div class="iq-card-header-toolbar d-flex align-items-center">
-                              <a href="category.html" class="btn btn-sm btn-primary view-more">Xem thêm</a>
+                              <a href="/BookStore/category/3" class="btn btn-sm btn-primary view-more">Xem thêm</a>
                            </div>
                         </div>                         
-                        <div class="iq-card-body favorites-contens">
-                           <ul id="favorites-slider" class="list-inline p-0 mb-0 row">
-                              <li class="col-md-4">
+                        <div class="iq-card-body similar-contens">
+                           <ul id="similar-slider" class="list-inline p-0 mb-0 row">
+                           <c:forEach var="item" items="${ interestbooks }" varStatus="loop">
+                              <li class="col-md-3">
                                  <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative">
-                                       <a href="javascript:void();">
-                                          <img src="<c:url value = "/assets/user/images/favorite/01.jpg"/>" class="img-fluid rounded w-100" alt="">
-                                       </a>                                
+                                    <div class="col-5 p-0 position-relative image-overlap-shadow">
+                                       <a href="javascript:void();"><img class="img-fluid rounded w-100" src="<c:url value = "/assets/user/${ item.bookImg }"/>" alt=""></a>
+                                       <div class="view-book">
+                                          <a href="/BookStore/details/${ item.bookID }" class="btn btn-sm btn-white">Xem sách</a>
+                                       </div>
                                     </div>
                                     <div class="col-7">
-                                       <h5 class="mb-2">D. Trump - Nghệ Thuật Đàm Phán</h5>
-                                       <p class="mb-2">Tác giả : Pedro Araez</p>                                          
-                                       <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Đã bán</span>
-                                          <span class="mr-4">65</span>
-                                       </div>
-                                       <div class="iq-progress-bar-linear d-inline-block w-100">
-                                          <div class="iq-progress-bar iq-bg-primary">
-                                             <span class="bg-primary" data-percent="65"></span>
+                                       <div class="mb-2">
+                                          <h6 class="mb-1">${ item.title }</h6>
+                                          <p class="font-size-13 line-height mb-1">${ item.year }</p>
+                                          <div class="d-block">
+                                             <span class="font-size-13 text-warning">
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             </span>
                                           </div>
                                        </div>
-                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
+                                       <div class="price d-flex align-items-center">
+                                          <h6><b>${ item.price } ₫</b></h6>
+                                       </div>
+                                       <div class="iq-product-action">
+                                          <a href="javascript:void();" onclick="addCart(${item.bookID});"><i class="ri-shopping-cart-2-fill text-primary"></i></a>
+                                          <a href="javascript:void();" class="ml-2"><i class="ri-heart-fill text-danger"></i></a>
+                                       </div>
                                     </div>
                                  </div>
                               </li>
-                              <li class="col-md-4">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative">
-                                       <a href="javascript:void();">
-                                          <img src="<c:url value = "/assets/user/images/favorite/02.jpg"/>" class="img-fluid rounded w-100" alt="">
-                                       </a>                                
-                                    </div>
-                                    <div class="col-7">
-                                       <h5 class="mb-2">Một Đời Quản Trị</h5>
-                                       <p class="mb-2">Tác giả : Michael klock</p>                                          
-                                       <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Đã bán</span>
-                                          <span class="mr-4">45</span>
-                                       </div>
-                                       <div class="iq-progress-bar-linear d-inline-block w-100">
-                                          <div class="iq-progress-bar iq-bg-danger">
-                                             <span class="bg-danger" data-percent="45"></span>
-                                          </div>
-                                       </div>
-                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-4">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative">
-                                       <a href="javascript:void();">
-                                          <img src="<c:url value = "/assets/user/images/favorite/03.jpg"/>" class="img-fluid rounded w-100" alt="">
-                                       </a>                                
-                                    </div>
-                                    <div class="col-7">
-                                       <h5 class="mb-2">Người Bán Hàng Vĩ Đại Nhất Thế Giới</h5>
-                                       <p class="mb-2">Tác giả : Daniel Ace</p>                                          
-                                       <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Đã bán</span>
-                                          <span class="mr-4">78</span>
-                                       </div>
-                                       <div class="iq-progress-bar-linear d-inline-block w-100">
-                                          <div class="iq-progress-bar iq-bg-info">
-                                             <span class="bg-info" data-percent="78"></span>
-                                          </div>
-                                       </div>
-                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="col-md-4">
-                                 <div class="d-flex align-items-center">
-                                    <div class="col-5 p-0 position-relative">
-                                       <a href="javascript:void();">
-                                          <img src="<c:url value = "/assets/user/images/favorite/04.jpg"/>" class="img-fluid rounded w-100" alt="">
-                                       </a>                                
-                                    </div>
-                                    <div class="col-7">
-                                       <h5 class="mb-2">Economix- Các Nền Kinh Tế Vận Hành</h5>
-                                       <p class="mb-2">Tác giả : Luka Afton</p>                                          
-                                       <div class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                          <span>Đã bán</span>
-                                          <span class="mr-4">90</span>
-                                       </div>
-                                       <div class="iq-progress-bar-linear d-inline-block w-100">
-                                          <div class="iq-progress-bar iq-bg-success">
-                                             <span class="bg-success" data-percent="90"></span>
-                                          </div>
-                                       </div>
-                                       <a href="#" class="text-dark">Đọc ngay<i class="ri-arrow-right-s-line"></i></a>
-                                    </div>
-                                 </div>
-                              </li>
+                              </c:forEach>
                            </ul>
                         </div>
                      </div>

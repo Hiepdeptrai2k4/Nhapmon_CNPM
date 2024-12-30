@@ -22,6 +22,7 @@ public class ProductController extends BaseController {
 		//ModelAndView mv= new ModelAndView("user/index");
 		loadCart(session,model);
 		loadBill(session,model);
+		_mvShare.addObject("interestbooks",productServiceImpl.GetDataFavorBook(6));
 		_mvShare.addObject("book",productServiceImpl.GetDataBookById(id));
 		_mvShare.addObject("fivebooks",productServiceImpl.GetDataSomeBook(5));
 		_mvShare.addObject("favorbooks",productServiceImpl.GetDataFavorBook(6));

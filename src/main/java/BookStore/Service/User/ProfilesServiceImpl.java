@@ -29,4 +29,12 @@ public class ProfilesServiceImpl implements IProfilesService {
 		return profilesDao.EditProfile(userID, userProfiles);
 	}
 
+
+	@Override
+	public List<UserProfiles> GetDataProfiles() {
+		// TODO Auto-generated method stub
+		return profilesDao.GetDataProfiles();
+	}
+	
+
 }

@@ -60,4 +60,28 @@ public class BillsDao extends BaseDao{
 		list = _jdbcTemplate.query(sql, new MapperBills());
 		return list;
 	} 
+	public List<Bills> GetDataAllBill(){
+		List<Bills> list = new ArrayList<Bills>();
+		String sql = "SELECT * FROM bills ";
+		list = _jdbcTemplate.query(sql, new MapperBills());
+		return list;
+	}
+	
+	 public int ConfirmBill(Bills bill) {
+		 StringBuffer sql = new StringBuffer();
+	        sql.append("UPDATE bills ");
+	        sql.append("SET ");
+	        sql.append("   State = '" + bill.getState() + "' ");
+	        sql.append("WHERE ");
+	        sql.append("   BillID = '" + bill.getBillID() + "'");
+
+	        int update = _jdbcTemplate.update(sql.toString());
+	        return update;
+	    }
+	 public Bills GetDataBillByID(int id){
+			List<Bills> list = new ArrayList<Bills>();
+			String sql = "SELECT * FROM bills where BillID = "+id;
+			list = _jdbcTemplate.query(sql, new MapperBills());
+			return list.get(0);
+		}
 }

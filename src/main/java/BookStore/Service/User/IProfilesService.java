@@ -13,5 +13,5 @@ public interface IProfilesService {
 	@Autowired
 	public UserProfiles GetDataProfiles(int userID) ;
 	public int EditProfiles(int userID, UserProfiles userProfiles);
-	
+	public List<UserProfiles> GetDataProfiles() ;
 }

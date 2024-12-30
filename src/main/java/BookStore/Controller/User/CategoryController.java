@@ -27,12 +27,16 @@ public class CategoryController extends BaseController{
 	CategoryServiceImpl categoryServiceImpl;
 	@Autowired
 	DataService dataService;
+	@Autowired
+	ProductServiceImpl productServiceImpl;
 	
 	@RequestMapping(value = {"/category/{id}"})
 	public ModelAndView Index(@PathVariable int id,HttpSession session, Model model) {
 		//ModelAndView mv= new ModelAndView("user/index");
 		loadCart(session,model);
 		loadBill(session,model);
+		_mvShare.addObject("interestbooks",productServiceImpl.GetDataFavorBook(6));
+		_mvShare.addObject("favorbooks",productServiceImpl.GetDataFavorBook(6));
 		_mvShare.addObject("genre", _homeService.GetDataCategorys());
 		_mvShare.addObject("authors", _homeService.GetDataAuthors());
 		_mvShare.addObject("searchInfo", new Search());
@@ -79,7 +83,8 @@ public class CategoryController extends BaseController{
                          Model model,HttpSession session) {
         
         
-        
+		_mvShare.addObject("interestbooks",productServiceImpl.GetDataFavorBook(6));
+		_mvShare.addObject("favorbooks",productServiceImpl.GetDataFavorBook(6));
 		_mvShare.addObject("genre", _homeService.GetDataCategorys());
 		_mvShare.addObject("authors", _homeService.GetDataAuthors());
 		loadCart(session,model);

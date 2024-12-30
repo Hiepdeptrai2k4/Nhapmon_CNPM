@@ -23,4 +23,8 @@ public interface IBillService {
 	public List<BigBillDetails> getBigBillDetails (int billID);
 	@Autowired
 	public Bills getBill (List<Bills> bills,int billID);
+	
+	public List<Bills> GetDataAllBill();
+	public int ConfirmBill(Bills bill) ;
+	public Bills GetDataBillByID(int id);
 }

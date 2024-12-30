@@ -32,7 +32,7 @@
             <div id="sidebar-scrollbar">
                <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
-                     <li><a href='<c:url value = "/admin/dashboard" />'><i class="las la-home iq-arrow-left"></i>Bảng Điều Khiển</a></li>
+                     <li><a href='<c:url value = "/admin/" />'><i class="las la-home iq-arrow-left"></i>Bảng Điều Khiển</a></li>
                      <li><a href='<c:url value = "/admin/admin-category" />'><i class="ri-record-circle-line"></i>Danh Mục Sách</a></li>
                      <li><a href='<c:url value = "/admin/admin-author" />'><i class="ri-record-circle-line"></i>Tác Giả</a></li>
                      <li><a href='<c:url value = "/admin/admin-books" />'><i class="ri-record-circle-line"></i>Sách</a></li>

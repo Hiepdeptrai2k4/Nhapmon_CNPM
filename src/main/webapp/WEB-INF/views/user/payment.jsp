@@ -30,18 +30,7 @@
                                  <hr>
                                  <div class="card-lists">
                                     <div class="form-group">
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="credit" name="customRadio" class="custom-control-input">
-                                          <label class="custom-control-label" for="credit"> Thẻ Tín dụng / Ghi nợ / ATM</label>
-                                       </div>
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="netbaking" name="customRadio" class="custom-control-input">
-                                          <label class="custom-control-label" for="netbaking"> Momo/ZaloPay</label>
-                                       </div>
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="emi" name="emi" class="custom-control-input">
-                                          <label class="custom-control-label" for="emi"> Trả góp</label>
-                                       </div>
+                                       
                                        <div class="custom-control custom-radio">
                                           <input type="radio" id="cod" name="cod" class="custom-control-input">
                                           <label class="custom-control-label" for="cod"> Thanh toán khi giao hàng                                          </label>
