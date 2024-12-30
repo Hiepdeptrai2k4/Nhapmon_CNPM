@@ -32,7 +32,7 @@ public class AddCategorysController extends BaseAdminController{
 		else {
 			_mvShare.addObject("status", "Thêm danh mục thất bại ");
 		}
-		_mvShare.setViewName("admin/add/addcategorys");
+		_mvShare.setViewName("redirect:/admin/admin-category");
 		
 		return _mvShare;
 	}

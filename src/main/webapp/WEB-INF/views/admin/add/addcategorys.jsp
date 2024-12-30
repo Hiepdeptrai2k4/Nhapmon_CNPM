@@ -27,10 +27,10 @@
                            <form:form action="them-danh-muc" accept-charset="UTF-8" method = "POST" modelAttribute="category">  
                               <div class="form-group">
                                  <label>Tên danh mục:</label>
-                                  <form:input type="text" class="form-control"  placeholder="Mời nhập tên tác giả" path="GenreName" />  
+                                  <form:input type="text" class="form-control"  placeholder="Mời nhập tên danh mục" path="GenreName" />  
                               </div>
                               <div class="form-group">
-                                 <label>Nội dụng:</label>
+                                 <label>Nội dung:</label>
                                 <form:input type="text" class="form-control" rows="4" placeholder="Mời nhập Description" path="Description" />  
                               </div>
                               <button type="submit" class="btn btn-primary">Gửi</button>

@@ -16,4 +16,22 @@ public class AddAuthorServiceImpl implements IAddAuthorService{
 		return authorDao.AddAuthor(author);
 	}
 
+	@Override
+	public int DeleteAuthor(int authorID) {
+		// TODO Auto-generated method stub
+		return authorDao.DeleteAuthors(authorID);
+	}
+
+	@Override
+	public Authors GetAuthorbyid(int authorID) {
+		// TODO Auto-generated method stub
+		return authorDao.GetDataAuthorsByid(authorID);
+	}
+
+	@Override
+	public int EditAuthor(Authors author) {
+		// TODO Auto-generated method stub
+		return authorDao.EditAuthors(author);
+	}
+
 }

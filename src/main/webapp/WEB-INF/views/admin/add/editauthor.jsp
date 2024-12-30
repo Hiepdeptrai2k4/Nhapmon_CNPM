@@ -1,11 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
+<!doctype html>
+<html lang="en">
   
    <body>
-     
+    <!-- TOP Nav Bar -->
+		
+	
          <!-- TOP Nav Bar END -->
          <!-- Page Content  -->
          <div id="content-page" class="content-page">
@@ -15,48 +21,34 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title">Danh sách tác giả</h4>
-                           </div>
-                           <div class="iq-card-header-toolbar d-flex align-items-center">
-                              <a href='<c:url value = "/admin/them-tac-gia" />' class="btn btn-primary">Thêm tác giả</a>
+                              <h4 class="card-title">Sửa tác giả</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
-                           <div class="table-responsive">
-                              <table class="data-tables table table-striped table-bordered" style="width:100%">
-                                 <thead>
-                                    <tr>
-                                       <th style="width: 5%;">STT</th>
-                                       <th style="width: 5%;">Hồ sơ</th>
-                                       <th style="width: 20%;">Tên tác giả</th>
-                                       <th style="width: 60%;">Mô tả tác giả</th>
-                                       <th style="width: 10%;">Hoạt động</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                 <c:forEach var="item" items="${ author }">
-						 <tr>
-                                       <td>${ item.authorID }</td>
-                                       <td>
-                                          <img src="<c:url value = "/assets/user/${ item.authorImg }"/>" class="img-fluid avatar-50 rounded" alt="author-profile">
-                                       </td>
-                                       <td>${ item.authorName }</td>
-                                       <td>
-                                          <p class="mb-0">${ item.information }</p>
-                                       </td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/BookStore/admin/sua-tac-gia/${ item.authorID }"><i class="ri-pencil-line"></i></a>
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xoá" href="/BookStore/admin/xoa-tac-gia/${ item.authorID }"><i class="ri-delete-bin-line"></i></a>
-                                          </div>
-                                       </td>
-                                    </tr>
-					</c:forEach>
-                                 
-                                  
-                                 </tbody>
-                              </table>
-                           </div>
+                            <form:form action="/BookStore/admin/sua-tac-gia/${author.authorID}" method = "POST" modelAttribute="author">  
+                              <div class="form-group">
+                                 <label>Tên tác giả:</label>
+                                <form:input type="text" class="form-control"  placeholder="Mời nhập tên tác giả" path="AuthorName" />  
+                              </div>
+                              <div class="form-group">
+                                 <label>Hồ sơ tác giả:</label>
+                                 <div class="custom-file">
+                                   
+                                       <form:input type="file" class="custom-file-input" accept="image/png, image/jpeg" path="AuthorImg" />  
+                                    <label class="custom-file-label" for="customFile">Chọn tập tin</label>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label>Email tác giả:</label>
+                                 <input type="email" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                 <label>Nội dung:</label>
+                                  <form:input type="text" class="form-control" rows="4" placeholder="Mời nhập Information" path="Information" />  
+                              </div>
+                              <button type="submit" class="btn btn-primary">Gửi</button>
+                              <button type="reset" class="btn btn-danger">Trở lại</button>
+                           </form:form>
                         </div>
                      </div>
                   </div>
@@ -75,6 +67,7 @@
                      <li class="list-inline-item"><a href="terms-of-service.html">Điều khoản sử dụng</a></li>
                   </ul>
                </div>
+               
             </div>
          </div>
       </footer>
@@ -139,3 +132,4 @@
       <!-- Custom JavaScript -->
       <script src="js/custom.js"></script>
    </body>
+</html>
