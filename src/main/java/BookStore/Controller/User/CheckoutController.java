@@ -57,7 +57,7 @@ public class CheckoutController extends BaseController{
 	public ModelAndView Payment(HttpSession session, Model model) {
 		//ModelAndView mv= new ModelAndView("user/index");
 		HashMap<Integer, CartItems> cart = loadCart(session,model); 
-		
+		_mvShare.addObject("totalprice",cartService.totalPrice(cart));
 		_mvShare.setViewName("user/payment");
 		return _mvShare;
 	}

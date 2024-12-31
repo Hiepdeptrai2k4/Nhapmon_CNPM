@@ -32,8 +32,8 @@
                                     <div class="form-group">
                                        
                                        <div class="custom-control custom-radio">
-                                          <input type="radio" id="cod" name="cod" class="custom-control-input">
-                                          <label class="custom-control-label" for="cod"> Thanh toán khi giao hàng                                          </label>
+                                          <input type="radio" id="cod" name="cod" class="custom-control-input" checked >
+                                          <label class="custom-control-label" for="cod" checked> Thanh toán khi giao hàng                                          </label>
                                        </div>
                                     </div>
                                  </div>
@@ -49,7 +49,7 @@
                                  <h4 class="mb-2">Chi tiết</h4>
                                  <div class="d-flex justify-content-between">
                                     <span>Giá 3 sản phẩm</span>
-                                    <span><strong>329.900đ</strong></span>
+                                    <span><strong><fmt:formatNumber value="${ totalprice/10*9 }" type="number" groupingUsed="true" pattern="#,##0" /> đ</strong></span>
                                  </div>
                                  <div class="d-flex justify-content-between">
                                     <span>Phí vận chuyển</span>
@@ -58,7 +58,7 @@
                                  <hr>
                                  <div class="d-flex justify-content-between">
                                     <span>Số tiền phải trả</span>
-                                    <span><strong>329.900đ</strong></span>
+                                    <span><strong><fmt:formatNumber value="${ totalprice/10*9 }" type="number" groupingUsed="true" pattern="#,##0" /> đ</strong></span>
                                  </div>
                               </div>
                            </div>
