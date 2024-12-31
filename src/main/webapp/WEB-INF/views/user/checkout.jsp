@@ -147,7 +147,7 @@
                                        <div class="col-md-6">
                                           <div class="form-group">
                                              <label>Họ và tên: *</label> 
-                                             <form:input type="text" class="form-control" id="fname" required="" value="${profile.firstName }${profile.lastName}" path="name" />
+                                             <form:input type="text" class="form-control" id="fname" required="" value="${profile.firstName } ${profile.lastName}" path="name" />
                              
                                           </div>
                                        </div>
@@ -173,20 +173,7 @@
                               </div>
                            </div>
                         </div>
-                        <div class="col-lg-4">
-                           <div class="iq-card">
-                              <div class="iq-card-body">
-                                 <h4 class="mb-2">Ông Trần Thuận</h4>
-                                 <div class="shipping-address">
-                                    <p class="mb-0">11 Thành Thái</p>
-                                    <p>Thành phố Đà Nẵng</p>
-                                    <p>0789-999-999</p>
-                                 </div>
-                                 <hr>
-                                 
-                              </div>
-                           </div>
-                        </div>
+                        
                      </div>
                   </div>
                   
